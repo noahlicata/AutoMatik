@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Login({ setCurrentUser, setLoggedIn }) {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -27,6 +29,7 @@ function Login({ setCurrentUser, setLoggedIn }) {
         res.json().then((formData) => {
           setCurrentUser(formData);
           setLoggedIn(formData);
+          history.push("/profile");
         });
       } else {
         res.json().then((errors) => {

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function Signup({ setCurrentUser, setLoggedIn }) {
+  const history = useHistory();
   //   const [errors, setErrors] = useState([]);
   const [formData, setFormData] = useState({
     email: "",
@@ -27,6 +29,7 @@ function Signup({ setCurrentUser, setLoggedIn }) {
         res.json().then((formData) => {
           setCurrentUser(formData);
           setLoggedIn(formData);
+          history.push("/profile");
         });
       } else {
         res.json().then((errors) => {
