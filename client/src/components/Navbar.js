@@ -90,9 +90,7 @@ function NavBar({ currentUser, setCurrentUser, loggedIn, setLoggedIn }) {
         </div>
       )}
       <Navbar.Collapse>
-        <Navbar.Link href="/" active={true}>
-          Home
-        </Navbar.Link>
+        <Navbar.Link href="/">Home</Navbar.Link>
         <Navbar.Link href="/shop">Shop</Navbar.Link>
         <Navbar.Link href="/sell">Sell</Navbar.Link>
         <Navbar.Link href="/contact">Contact</Navbar.Link>

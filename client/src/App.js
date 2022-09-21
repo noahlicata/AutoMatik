@@ -6,6 +6,9 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import NavBar from "./components/Navbar";
 import Profile from "./components/Profile";
+import Shop from "./components/Shop";
+import Sell from "./components/Sell";
+import Contact from "./components/Contact";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -53,6 +56,15 @@ function App() {
                 currentUser={currentUser}
                 setCurrentUser={setCurrentUser}
               />
+            </Route>
+            <Route exact path="/shop">
+              <Shop />
+            </Route>
+            <Route exact path="/sell">
+              <Sell />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
             </Route>
           </Switch>
         </BrowserRouter>
