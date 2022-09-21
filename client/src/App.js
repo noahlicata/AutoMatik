@@ -27,6 +27,7 @@ function App() {
       <div id="nav-container">
         <BrowserRouter>
           <NavBar
+            currentUser={currentUser}
             setCurrentUser={setCurrentUser}
             loggedIn={loggedIn}
             setLoggedIn={setLoggedIn}
