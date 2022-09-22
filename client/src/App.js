@@ -9,6 +9,7 @@ import Profile from "./components/Profile";
 import Shop from "./components/Shop";
 import Sell from "./components/Sell";
 import Contact from "./components/Contact";
+import Details from "./components/Details";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -22,8 +23,6 @@ function App() {
       }
     });
   }, [loggedIn]);
-
-  console.log(currentUser);
 
   return (
     <div>
@@ -65,6 +64,9 @@ function App() {
             </Route>
             <Route exact path="/contact">
               <Contact />
+            </Route>
+            <Route exact path="/details">
+              <Details />
             </Route>
           </Switch>
         </BrowserRouter>
