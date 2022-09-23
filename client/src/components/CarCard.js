@@ -1,22 +1,24 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function CarCard({ car }) {
   return (
     <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-      <a href="/details">
+      <Link to={`/cars/${car.id}`}>
         <img class="rounded-t-lg" src={car.image} alt="" />
-      </a>
+      </Link>
       <div class="p-5">
-        <a href="/details">
+        <Link to={`/cars/${car.id}`}>
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {car.year} {car.make} - {car.model}
           </h5>
-        </a>
+        </Link>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {car.milage} Miles
         </p>
-        <a
-          href="/details"
+        <Link
+          to={`/cars/${car.id}`}
+          href="/cars/:id"
           class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           View Details
@@ -33,7 +35,7 @@ function CarCard({ car }) {
               clip-rule="evenodd"
             ></path>
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );

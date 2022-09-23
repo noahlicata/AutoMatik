@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const Details = () => {
+  const [carDetails, setCarDetails] = useState({});
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`/cars/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCarDetails(data);
+      });
+  }, []);
+
+  console.log(carDetails);
+
   return (
     <div>
       <article className="md:gap-8 md:grid md:grid-cols-3">
@@ -12,9 +26,11 @@ const Details = () => {
               alt=""
             />
             <div className="space-y-1 font-medium dark:text-white">
-              <p>car.make - car.model</p>
+              <p>
+                {carDetails.make} - {carDetails.model}
+              </p>
               <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                car.version
+                {carDetails.version}
               </div>
             </div>
           </div>

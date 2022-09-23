@@ -14,6 +14,15 @@ import Details from "./components/Details";
 function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    fetch("/cars")
+      .then((res) => res.json())
+      .then((cars) => {
+        setCars(cars);
+      });
+  }, []);
 
   useEffect(() => {
     fetch(`/logged_in`).then((res) => {
@@ -56,8 +65,8 @@ function App() {
                 setCurrentUser={setCurrentUser}
               />
             </Route>
-            <Route exact path="/shop">
-              <Shop />
+            <Route exact path="/cars">
+              <Shop cars={cars} />
             </Route>
             <Route exact path="/sell">
               <Sell />
@@ -65,7 +74,7 @@ function App() {
             <Route exact path="/contact">
               <Contact />
             </Route>
-            <Route exact path="/details">
+            <Route exact path="/cars/:id">
               <Details />
             </Route>
           </Switch>
