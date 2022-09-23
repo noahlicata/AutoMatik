@@ -4,7 +4,11 @@ import { useParams } from "react-router-dom";
 
 const Details = () => {
   const [randomState, setRandomState] = useState(1);
-  const [carDetails, setCarDetails] = useState([]);
+  const [carDetails, setCarDetails] = useState({
+    car_options: [],
+    standard_specs: [],
+  });
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,6 +22,8 @@ const Details = () => {
 
   let options = carDetails.car_options;
   let specs = carDetails.standard_specs;
+
+  console.log(carDetails);
 
   return (
     <div>
@@ -93,7 +99,7 @@ const Details = () => {
               </p>
             </div>
           </div>
-          {/* <div className="inline-flex space-x-20">
+          <div className="inline-flex space-x-20">
             <div>
               Options:
               {options.map((option) => {
@@ -114,7 +120,7 @@ const Details = () => {
                 );
               })}
             </div>
-          </div> */}
+          </div>
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
             <Carousel>
               <img
