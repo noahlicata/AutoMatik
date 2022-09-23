@@ -79,6 +79,7 @@ const Details = () => {
               </p>
             )}
           </div>
+
           <p className="mb-2 font-light text-gray-500 dark:text-gray-400">
             Options: {carDetails.car_options}
           </p>
