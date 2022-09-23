@@ -40,10 +40,14 @@ function Login({ setCurrentUser, setLoggedIn }) {
     });
   }
 
+  const handleGoBack = () => {
+    history.goBack();
+  };
+
   return (
     <React.Fragment>
       <Modal show={true} size="md" popup={true}>
-        <Modal.Header />
+        <Modal.Header onClick={handleGoBack} />
         <Modal.Body>
           <form onSubmit={handleSubmit}>
             <div className="space-y-6 px-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8">
