@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const Details = () => {
   const [randomState, setRandomState] = useState(1);
-  const [carDetails, setCarDetails] = useState({});
+  const [carDetails, setCarDetails] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -15,6 +15,9 @@ const Details = () => {
         setRandomState(Math.floor(Math.random() * 2));
       });
   }, []);
+
+  let options = carDetails.car_options;
+  let specs = carDetails.standard_specs;
 
   return (
     <div>
@@ -35,6 +38,17 @@ const Details = () => {
               </div>
               <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                 Miles: {carDetails.milage}
+              </div>
+              <div>
+                {randomState === 1 ? (
+                  <p className="bg-green-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
+                    GREAT PRICE
+                  </p>
+                ) : (
+                  <p className="bg-orange-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
+                    AVERAGE PRICE
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -68,24 +82,39 @@ const Details = () => {
               <h4 className="text-xl font-bold text-gray-900 dark:text-white">
                 Seller Comments:
               </h4>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
             </div>
-            {randomState === 1 ? (
-              <p className="bg-green-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
-                GREAT PRICE
-              </p>
-            ) : (
-              <p className="bg-orange-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
-                AVERAGE PRICE
-              </p>
-            )}
           </div>
-
-          <p className="mb-2 font-light text-gray-500 dark:text-gray-400">
-            Options: {carDetails.car_options}
-          </p>
-          <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
-            Specs: {carDetails.standard_specs}
-          </p>
+          {/* <div className="inline-flex space-x-20">
+            <div>
+              Options:
+              {options.map((option) => {
+                return (
+                  <p className="font-light text-gray-500 dark:text-gray-400">
+                    {option}
+                  </p>
+                );
+              })}
+            </div>
+            <div>
+              Specs:
+              {specs.map((option) => {
+                return (
+                  <p className="font-light text-gray-500 dark:text-gray-400">
+                    {option}
+                  </p>
+                );
+              })}
+            </div>
+          </div> */}
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
             <Carousel>
               <img

@@ -15,7 +15,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_170816) do
   enable_extension "plpgsql"
 
   create_table "cars", force: :cascade do |t|
-    t.string "image"
     t.string "vin"
     t.string "make"
     t.string "model"
@@ -30,8 +29,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_170816) do
     t.integer "dealer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "car_options"
-    t.string "standard_specs"
+    t.string "image"
+    t.string "car_options", array: true, default: []
+    t.string "standard_specs", array: true, default: []
   end
 
   create_table "dealers", force: :cascade do |t|
@@ -56,5 +56,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_170816) do
     t.datetime "updated_at", null: false
     t.string "image"
   end
-
 end
