@@ -2,6 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function CarCard({ car }) {
+  // nonsense
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+  const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  let n = getRandomInt(10000, 50000);
+  // nonsense
+
   return (
     <div class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <Link to={`/cars/${car.id}`}>
@@ -9,12 +19,15 @@ function CarCard({ car }) {
       </Link>
       <div class="p-5">
         <Link to={`/cars/${car.id}`}>
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {car.year} {car.make} - {car.model}
+          <h5 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {car.year} {car.make} {car.model}
+          </h5>
+          <h5 class="text-large font-bold tracking-tight text-gray-500 dark:text-white">
+            {car.version}
           </h5>
         </Link>
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          {car.milage} Miles
+          ${n.toLocaleString()}
         </p>
         <Link
           to={`/cars/${car.id}`}

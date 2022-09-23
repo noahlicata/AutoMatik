@@ -21,6 +21,8 @@ Dealer.create(
     engine_size: Faker::Vehicle.engine_size,
     year: Faker::Vehicle.year,
     milage: Faker::Vehicle.mileage,
+    car_options: Faker::Vehicle.car_options,
+    standard_specs: Faker::Vehicle.standard_specs,
     dealer_id: 1,
   )
 end

@@ -1,7 +1,9 @@
+import { Carousel } from "flowbite-react";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 const Details = () => {
+  const [randomState, setRandomState] = useState(1);
   const [carDetails, setCarDetails] = useState({});
   const { id } = useParams();
 
@@ -10,6 +12,7 @@ const Details = () => {
       .then((res) => res.json())
       .then((data) => {
         setCarDetails(data);
+        setRandomState(Math.floor(Math.random() * 2));
       });
   }, []);
 
@@ -56,34 +59,76 @@ const Details = () => {
             <div className="pr-4">
               <footer>
                 <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                  Posted:{" "}
-                  <time dateTime="2022-01-20 19:00">January 20, 2022</time>
+                  Posted{" "}
+                  <time dateTime="2022-01-20 19:00">
+                    {Math.floor(Math.random() * 20)} days ago
+                  </time>
                 </p>
               </footer>
               <h4 className="text-xl font-bold text-gray-900 dark:text-white">
                 Seller Comments:
               </h4>
             </div>
-            <p className="bg-green-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
-              GREAT PRICE
-            </p>
+            {randomState === 1 ? (
+              <p className="bg-green-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
+                GREAT PRICE
+              </p>
+            ) : (
+              <p className="bg-orange-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
+                AVERAGE PRICE
+              </p>
+            )}
           </div>
           <p className="mb-2 font-light text-gray-500 dark:text-gray-400">
-            Options: carDetails.car_options
+            Options: {carDetails.car_options}
           </p>
           <p className="mb-5 font-light text-gray-500 dark:text-gray-400">
-            Specs: carDetails.standard_specs
+            Specs: {carDetails.standard_specs}
           </p>
+          <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+            <Carousel>
+              <img
+                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                  Math.random() * 101
+                )}`}
+                alt="..."
+              />
+              <img
+                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                  Math.random() * 101
+                )}`}
+                alt="..."
+              />
+              <img
+                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                  Math.random() * 101
+                )}`}
+                alt="..."
+              />
+              <img
+                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                  Math.random() * 101
+                )}`}
+                alt="..."
+              />
+              <img
+                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                  Math.random() * 101
+                )}`}
+                alt="..."
+              />
+            </Carousel>
+          </div>
           <aside className="flex items-center mt-3 space-x-5">
             <button
               type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Prev
             </button>
             <button
               type="button"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             >
               Next
             </button>
