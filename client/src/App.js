@@ -10,6 +10,7 @@ import Shop from "./components/Shop";
 import Sell from "./components/Sell";
 import Contact from "./components/Contact";
 import Details from "./components/Details";
+import Footer from "./components/Footer";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -78,6 +79,7 @@ function App() {
               <Details />
             </Route>
           </Switch>
+          <Footer />
         </BrowserRouter>
       </div>
     </div>

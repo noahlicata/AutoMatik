@@ -7,7 +7,7 @@ const Home = () => {
         <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div class="mr-auto place-self-center lg:col-span-7">
             <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-              Stuff and things about cars and such
+              Welcome to AutoMatik!
             </h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
               Sutff and things about cars! More stuff and more things and more
@@ -44,6 +44,37 @@ const Home = () => {
               src="https://freepngimg.com/save/31216-car-transparent/624x300"
               alt="mockup"
             />
+          </div>
+        </div>
+      </section>
+      <section class="bg-white dark:bg-gray-900">
+        <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+          <div class="grid grid-cols-2 gap-4 mt-8">
+            <img
+              class="w-full rounded-lg"
+              src="https://s1.1zoom.me/b6462/7/Mercedes-Benz_Brabus_2020_Brabus_700_Widestar_SUV_587678_600x800.jpg"
+              alt="g700"
+            />
+            <img
+              class="mt-4 w-full lg:mt-10 rounded-lg"
+              src="https://s1.1zoom.me/b3258/889/Evening_Audi_2020_RS_Q8_Green_Metallic_Crossover_574500_600x800.jpg"
+              alt="rsq8"
+            />
+          </div>
+          <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+              Sutff and things about cars!
+            </h2>
+            <p class="mb-4">
+              Here at AutoMatik, sutff and things about cars! More stuff and
+              more things and more stuff and more things. Stuff. Things. And,
+              believe it or not, stuff. And also things!
+            </p>
+            <p>
+              More sutff and things about cars! More stuff and more things and
+              more stuff and more things. Stuff. Things. And, believe it or not,
+              stuff. And also things!
+            </p>
           </div>
         </div>
       </section>
