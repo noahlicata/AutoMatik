@@ -13,7 +13,7 @@ function CarCard({ car }) {
   // nonsense
 
   return (
-    <div>
+    <div className="pb-6">
       <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
         <Link to={`/cars/${car.id}`}>
           <img className="rounded-t-lg" src={car.image} alt="" />
