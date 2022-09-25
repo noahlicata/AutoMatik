@@ -47,7 +47,7 @@ function NavBar({ currentUser, setCurrentUser, loggedIn, setLoggedIn }) {
             label={
               <Avatar
                 alt="User settings"
-                img="https://www.nicepng.com/png/detail/933-9332131_profile-picture-default-png.png"
+                img="https://dreamvilla.life/wp-content/uploads/2017/07/dummy-profile-pic.png"
                 rounded={true}
               />
             }

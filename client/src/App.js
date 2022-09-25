@@ -46,7 +46,7 @@ function App() {
           />
           <Switch>
             <Route exact path="/">
-              <Home />
+              <Home loggedIn={loggedIn} currentUser={currentUser} />
             </Route>
             <Route exact path="/signin">
               <Login
@@ -73,7 +73,7 @@ function App() {
               <Sell />
             </Route>
             <Route exact path="/contact">
-              <Contact />
+              <Contact loggedIn={loggedIn} currentUser={currentUser} />
             </Route>
             <Route exact path="/cars/:id">
               <Details />

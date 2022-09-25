@@ -26,7 +26,7 @@ const Details = () => {
   console.log(carDetails);
 
   return (
-    <div>
+    <div className="p-4">
       <article className="md:gap-8 md:grid md:grid-cols-3">
         <div>
           <div className="flex items-center mb-6 space-x-4">

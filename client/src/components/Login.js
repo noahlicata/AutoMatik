@@ -30,7 +30,7 @@ function Login({ setCurrentUser, setLoggedIn }) {
         res.json().then((formData) => {
           setCurrentUser(formData);
           setLoggedIn(formData);
-          history.push("/profile");
+          history.push("/");
         });
       } else {
         res.json().then((errors) => {
