@@ -147,11 +147,8 @@ function Shop({ cars }) {
                       d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
                     ></path>
                   </svg>
-                  <span class="flex-1 ml-3 whitespace-nowrap">
-                    Clear Filters
-                  </span>
-                  <span>|</span>
-                  <span class="pl-2">3 Results</span>
+
+                  <span class="pl-2">Clear Filters</span>
                 </a>
               </li>
               <li>
@@ -178,7 +175,7 @@ function Shop({ cars }) {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/signin"
                   class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <svg
