@@ -13,8 +13,8 @@ function Shop({ cars }) {
   });
 
   return (
-    <div>
-      <form className="text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full px-40 pb-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
+    <div className="p-4">
+      <form className="text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full px-40 mb-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light">
         <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -60,7 +60,7 @@ function Shop({ cars }) {
       {/* sidebar */}
 
       <div className="flex justify-center">
-        <aside class="w-64" aria-label="Sidebar">
+        <aside class="w-64 mr-10" aria-label="Sidebar">
           <div class="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
             <a href="/" class="flex items-center pl-2.5 mb-5">
               <img
@@ -197,7 +197,7 @@ function Shop({ cars }) {
             </ul>
           </div>
         </aside>
-        <div className="flex flex-col">{carsArr}</div>
+        <div className="flex flex-col ml-10">{carsArr}</div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function CarCard({ car }) {
@@ -11,13 +11,16 @@ function CarCard({ car }) {
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   let n = getRandomInt(10000, 50000);
   let m = getRandomInt(1500, 0);
+  let p = getRandomInt(1, 2);
+  const price = n.toLocaleString();
   // nonsense
+  const [randomState, setRandomState] = useState(Math.floor(Math.random() * 2));
 
   return (
-    <div className="">
+    <div className="mb-4">
       <Link
         to={`/cars/${car.id}`}
-        class="flex flex-col items-center bg-white rounded-lg border
+        class="flex flex-col items-center w-full bg-white rounded-lg border
  md:flex-row hover:bg-gray-100 dark:border-gray-700
       dark:bg-gray-800 dark:hover:bg-gray-700"
       >
@@ -26,15 +29,19 @@ function CarCard({ car }) {
           src={car.image}
           alt=""
         />
+
         <div class="flex flex-col justify-between p-4 leading-normal">
-          <p class="font-normal text-gray-700 dark:text-gray-400">
-            ${n.toLocaleString()}
-          </p>
-          <p class="mb-3 text-xs font-bold text-gray-500 dark:text-gray-400">
-            {car.milage.toLocaleString()} miles
-          </p>
+          <div className="ml-auto"></div>
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {car.year} {car.make} {car.model} {car.version}
+            {car.year} {car.make} {car.model} {car.version}{" "}
+            {randomState === 1 ? (
+              <span class="text-yellow-700 dark:text-gray-400">${price}</span>
+            ) : (
+              <span class="text-green-500">${price}</span>
+            )}
+            <p class="mb-2 mt-4 text-xs font-bold text-gray-500 dark:text-gray-400">
+              {car.milage.toLocaleString()} miles
+            </p>
           </h5>
           <p class=" font-normal text-sm text-gray-700 dark:text-gray-400">
             <span className="font-bold">Random Dealer</span>{" "}
@@ -107,46 +114,6 @@ function CarCard({ car }) {
         </div>
       </Link>
     </div>
-    // <div className="pb-6">
-    //   <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-    //     <Link to={`/cars/${car.id}`}>
-    //       <img className="rounded-t-lg" src={car.image} alt="" />
-    //     </Link>
-    //     <div className="p-5">
-    //       <Link to={`/cars/${car.id}`}>
-    //         <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-    //           {car.year} {car.make} {car.model}
-    //         </h5>
-    //         <h5 className="text-large font-bold tracking-tight text-gray-500 dark:text-white">
-    //           {car.version}
-    //         </h5>
-    //       </Link>
-    //       <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-    //         ${n.toLocaleString()}
-    //       </p>
-    //       <Link
-    //         to={`/cars/${car.id}`}
-    //         href="/cars/:id"
-    //         className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-    //       >
-    //         View Details
-    //         <svg
-    //           aria-hidden="true"
-    //           className="ml-2 -mr-1 w-4 h-4"
-    //           fill="currentColor"
-    //           viewBox="0 0 20 20"
-    //           xmlns="http://www.w3.org/2000/svg"
-    //         >
-    //           <path
-    //             fillRule="evenodd"
-    //             d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-    //             clipRule="evenodd"
-    //           ></path>
-    //         </svg>
-    //       </Link>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 
