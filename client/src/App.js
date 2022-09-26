@@ -17,6 +17,10 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [cars, setCars] = useState([]);
 
+  // const displayedCars = cars.filter((car) => {
+  //   return car.make.toLowerCase().includes(searchTerm.toLowerCase());
+  // });
+
   useEffect(() => {
     fetch("/cars")
       .then((res) => res.json())

@@ -23,8 +23,6 @@ const Details = () => {
   let options = carDetails.car_options;
   let specs = carDetails.standard_specs;
 
-  console.log(carDetails);
-
   return (
     <div className="p-4">
       <article className="md:gap-8 md:grid md:grid-cols-3">
