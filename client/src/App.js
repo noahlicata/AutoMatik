@@ -17,16 +17,19 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [cars, setCars] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   // const displayedCars = cars.filter((car) => {
   //   return car.make.toLowerCase().includes(searchTerm.toLowerCase());
   // });
 
   useEffect(() => {
+    setIsLoading(true);
     fetch("/cars")
       .then((res) => res.json())
       .then((cars) => {
         setCars(cars);
+        setIsLoading(false);
       });
   }, []);
 
@@ -77,6 +80,8 @@ function App() {
                 currentUser={currentUser}
                 loggedIn={loggedIn}
                 setCars={setCars}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
               />
             </Route>
             <Route exact path="/sell">

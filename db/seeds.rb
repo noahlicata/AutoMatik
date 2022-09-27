@@ -6,10 +6,10 @@ Dealer.create(
   brand: "Things",
 )
 
-100.times do
+672.times do
   make = Faker::Vehicle.make
   Car.create(
-    image: "https://loremflickr.com/300/300/automobile/all?random=#{rand(1..200)}",
+    image: "https://loremflickr.com/500/500/vehicle/all?random=#{rand(1..200)}",
     vin: Faker::Vehicle.vin,
     make: make,
     model: Faker::Vehicle.model(make_of_model: make),
@@ -20,7 +20,7 @@ Dealer.create(
     fuel_type: Faker::Vehicle.fuel_type,
     engine_size: Faker::Vehicle.engine_size,
     year: Faker::Vehicle.year,
-    milage: Faker::Vehicle.mileage,
+    milage: rand(1..200000),
     car_options: Faker::Vehicle.car_options,
     standard_specs: Faker::Vehicle.standard_specs,
     price: rand(5000..50000),

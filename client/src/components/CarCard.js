@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Tooltip, Button } from "flowbite-react";
 
 function CarCard({ car }) {
   function getRandomInt(min, max) {
@@ -43,7 +44,7 @@ function CarCard({ car }) {
               </span>
             )}
             <p className="mb-2 mt-4 text-xs font-bold text-gray-500 dark:text-gray-400">
-              {car.milage.toLocaleString()} miles
+              {car.milage} miles
             </p>
           </h5>
           <p className=" font-normal text-sm text-gray-700 dark:text-gray-400">
@@ -130,10 +131,30 @@ function CarCard({ car }) {
                 <span>{getRandomInt(1000, 9999)}</span>
               </span>
             )}
-            <span className="text-xs"> | </span>
-            <span className="font-normal hover:underline text-xs text-blue-700 dark:text-blue-400">
-              Confirm Availability
-            </span>
+
+            {car.year >= 2022 && car.milage <= 10 ? (
+              <span>
+                <Tooltip
+                  content="Car is brand new, any existing miles are from test drives."
+                  style="dark"
+                >
+                  <button className="font-normal hover:underline text-xs text-green-700 dark:text-green-400">
+                    New
+                  </button>
+                </Tooltip>
+              </span>
+            ) : (
+              <span>
+                <Tooltip
+                  content="Car has been previously owned by one or many people. See details for more information on car history."
+                  style="dark"
+                >
+                  <button className="font-normal hover:underline text-xs text-orange-700 dark:text-orange-400">
+                    Used
+                  </button>
+                </Tooltip>
+              </span>
+            )}
           </div>
         </div>
       </Link>
