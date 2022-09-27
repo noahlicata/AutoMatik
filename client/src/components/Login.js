@@ -200,7 +200,7 @@ function Login({ setCurrentUser, setLoggedIn }) {
           </form>
         </div>
       </div>
-      <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <img
           src="https://www.pngmart.com/files/22/Mercedes-Benz-AMG-PNG-File.png"
           alt="mockup"

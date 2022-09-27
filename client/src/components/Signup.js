@@ -129,7 +129,7 @@ function Signup({ setCurrentUser, setLoggedIn }) {
           </form>
         </div>
       </div>
-      <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <img
           src="https://i.pinimg.com/originals/58/b1/14/58b1147d12c03bfbb8d902a96a80f187.png"
           alt="mockup"
