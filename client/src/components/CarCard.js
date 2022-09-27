@@ -119,9 +119,17 @@ function CarCard({ car }) {
             </span>
           </p>
           <div>
-            <span className="font-normal text-xs text-gray-700 dark:text-gray-400">
-              720-073-1109
-            </span>
+            {randomState === 1 ? (
+              <span className="font-normal text-xs text-gray-700 dark:text-gray-400">
+                720-<span>{getRandomInt(100, 999)}-</span>
+                <span>{getRandomInt(1000, 9999)}</span>
+              </span>
+            ) : (
+              <span className="font-normal text-xs text-gray-700 dark:text-gray-400">
+                303-<span>{getRandomInt(100, 999)}-</span>
+                <span>{getRandomInt(1000, 9999)}</span>
+              </span>
+            )}
             <span className="text-xs"> | </span>
             <span className="font-normal hover:underline text-xs text-blue-700 dark:text-blue-400">
               Confirm Availability

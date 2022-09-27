@@ -4,8 +4,6 @@ import CarCard from "./CarCard";
 function Shop({ cars, currentUser, loggedIn, setCars }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [yearOrder, setYearOrder] = useState(true);
-  const [priceOrder, setPriceOrder] = useState(true);
-  const [milageOrder, setMilageOrder] = useState(true);
 
   // nonsense
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

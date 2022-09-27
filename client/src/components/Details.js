@@ -1,5 +1,5 @@
 import { Carousel } from "flowbite-react";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 
 const Details = () => {
@@ -8,6 +8,18 @@ const Details = () => {
     car_options: [],
     standard_specs: [],
   });
+  const [tradeValue, setTradeValue] = useState("");
+  const [owedValue, setOwedValue] = useState("");
+  const [downValue, setDownValue] = useState("");
+  const [total, setTotal] = useState("");
+
+  let dealerDiscount = Math.floor(Math.random() * 1000);
+
+  const calculateValues = () => {
+    setTotal("something");
+  };
+
+  console.log(total);
 
   const { id } = useParams();
 
@@ -28,7 +40,7 @@ const Details = () => {
 
   let options = carDetails.car_options;
   let specs = carDetails.standard_specs;
-  let dealerDiscount = Math.floor(Math.random() * 1000);
+
   let m = getRandomInt(1500, 0);
 
   return (
@@ -65,8 +77,8 @@ const Details = () => {
             </div>
           </div>
 
-          <div class="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <div class="px-5 pb-5">
+          <div className="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div className="px-5 pb-5">
               <p className="font-normal text-sm text-gray-700 dark:text-gray-400">
                 <span className="font-bold">Random Dealer</span>{" "}
                 {`(${m.toLocaleString()} miles away)`}
@@ -139,40 +151,61 @@ const Details = () => {
                   </svg>
                 )}
               </span>
-              <div class="flex justify-between items-center">
-                <span class="text-l font-bold text-gray-900">Color</span>
-                <div href="#" class="text-sm text-gray-700 dark:text-gray-400">
+              <div className="flex justify-between items-center">
+                <span className="text-l font-bold text-gray-900">Color</span>
+                <div
+                  href="#"
+                  className="text-sm text-gray-700 dark:text-gray-400"
+                >
                   {carDetails.color}
                 </div>
               </div>
 
-              <div class="flex justify-between items-center">
-                <span class="text-l font-bold text-gray-900">Transmission</span>
-                <div href="#" class="text-sm text-gray-700 dark:text-gray-400">
+              <div className="flex justify-between items-center">
+                <span className="text-l font-bold text-gray-900">
+                  Transmission
+                </span>
+                <div
+                  href="#"
+                  className="text-sm text-gray-700 dark:text-gray-400"
+                >
                   {carDetails.transmission}
                 </div>
               </div>
 
-              <div class="flex justify-between items-center">
-                <span class="text-l font-bold text-gray-900">Drive Type</span>
-                <div href="#" class="text-sm text-gray-700 dark:text-gray-400">
+              <div className="flex justify-between items-center">
+                <span className="text-l font-bold text-gray-900">
+                  Drive Type
+                </span>
+                <div
+                  href="#"
+                  className="text-sm text-gray-700 dark:text-gray-400"
+                >
                   {carDetails.drive_type}
                 </div>
               </div>
-              <div class="flex justify-between items-center">
-                <span class="text-l font-bold text-gray-900">Fuel Type</span>
-                <div href="#" class="text-sm text-gray-700 dark:text-gray-400">
+              <div className="flex justify-between items-center">
+                <span className="text-l font-bold text-gray-900">
+                  Fuel Type
+                </span>
+                <div
+                  href="#"
+                  className="text-sm text-gray-700 dark:text-gray-400"
+                >
                   {carDetails.fuel_type}
                 </div>
               </div>
-              <div class="flex justify-between items-center">
-                <span class="text-l font-bold text-gray-900">Engine</span>
-                <div href="#" class="text-sm text-gray-700 dark:text-gray-400">
+              <div className="flex justify-between items-center">
+                <span className="text-l font-bold text-gray-900">Engine</span>
+                <div
+                  href="#"
+                  className="text-sm text-gray-700 dark:text-gray-400"
+                >
                   {carDetails.engine_size}
                 </div>
               </div>
-              <div class="flex flex-col items-center mt-4">
-                <span class="text-l font-bold text-gray-900">Options</span>
+              <div className="flex flex-col items-center mt-4">
+                <span className="text-l font-bold text-gray-900">Options</span>
                 {options.map((option) => {
                   return (
                     <p className="text-sm text-gray-700 dark:text-gray-400 flex justify-center">
@@ -181,8 +214,8 @@ const Details = () => {
                   );
                 })}
               </div>
-              <div class="flex flex-col items-center mt-4">
-                <span class="text-l font-bold text-gray-900">Specs</span>
+              <div className="flex flex-col items-center mt-4">
+                <span className="text-l font-bold text-gray-900">Specs</span>
                 {specs.map((option) => {
                   return (
                     <p className="text-sm text-gray-700 dark:text-gray-400 flex justify-center">
@@ -222,31 +255,31 @@ const Details = () => {
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
             <Carousel>
               <img
-                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
                   Math.random() * 101
                 )}`}
                 alt="..."
               />
               <img
-                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
                   Math.random() * 101
                 )}`}
                 alt="..."
               />
               <img
-                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
                   Math.random() * 101
                 )}`}
                 alt="..."
               />
               <img
-                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
                   Math.random() * 101
                 )}`}
                 alt="..."
               />
               <img
-                src={`https://loremflickr.com/600/300/vehicle/all?random=${Math.floor(
+                src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
                   Math.random() * 101
                 )}`}
                 alt="..."
@@ -256,9 +289,14 @@ const Details = () => {
 
           {/* split */}
 
-          <form className="mt-5 border-8 border-blue-700 rounded-xl bg-blue-700 shadow-md">
-            <h1 class="block mb-2 text-xl font-medium text-white">FINANCING</h1>
-            <div class="grid gap-6 mb-6 md:grid-cols-2">
+          <form
+            className="mt-5 border-8 border-blue-700 rounded-xl bg-blue-700 shadow-md"
+            onSubmit={calculateValues}
+          >
+            <h1 className="block mb-2 text-xl font-medium text-white">
+              FINANCING
+            </h1>
+            <div className="grid gap-6 mb-6 md:grid-cols-2">
               <div>
                 <div className="text-white">MSRP</div>
                 <div className="text-white">Dealer Discount</div>
@@ -274,45 +312,65 @@ const Details = () => {
                 </div>
               </div>
               <div>
-                <label class="block mb-2 text-sm font-medium text-white">
+                <label className="block mb-2 text-sm font-medium text-white">
                   Est. Trade-In Value
                 </label>
                 <input
+                  value={tradeValue}
+                  onChange={(e) => setTradeValue(e.target.value)}
                   type="text"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Amount"
                   required=""
                 />
               </div>
               <div>
-                <label class="block mb-2 text-sm font-medium text-white">
+                <label className="block mb-2 text-sm font-medium text-white">
                   Amount Owed on Trade
                 </label>
                 <input
+                  value={owedValue}
+                  onChange={(e) => setOwedValue(e.target.value)}
                   type="text"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Amount"
                   required=""
                 />
               </div>
               <div>
-                <label class="block mb-2 text-sm font-medium text-white">
+                <label className="block mb-2 text-sm font-medium text-white">
                   Down Payment
                 </label>
                 <input
+                  value={downValue}
+                  onChange={(e) => setDownValue(e.target.value)}
                   type="text"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Amount"
                   required=""
                 />
               </div>
+              <div>
+                <label className="block mb-2 text-xl font-bold text-center text-white">
+                  Average Monthly Payment
+                </label>
+                {!null ? (
+                  <div className="text-white mt-4 text-xl font-bold text-center">
+                    Loading...
+                  </div>
+                ) : (
+                  <div className="text-white mt-4 text-xl font-bold text-center">
+                    {(carDetails.price -= dealerDiscount / 60)}
+                  </div>
+                )}
+              </div>
             </div>
-            <button
-              type="button"
-              class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+            {/* <button
+              type="submit"
+              className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
             >
               Calculate
-            </button>
+            </button> */}
           </form>
         </div>
       </article>
