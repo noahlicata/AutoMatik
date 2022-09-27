@@ -16,7 +16,7 @@ const Details = () => {
   let dealerDiscount = Math.floor(Math.random() * 1000);
 
   const calculateValues = () => {
-    setTotal("something");
+    setTotal();
   };
 
   console.log(total);
@@ -311,13 +311,14 @@ const Details = () => {
                   ${(carDetails.price -= dealerDiscount)}
                 </div>
               </div>
+
               <div>
                 <label className="block mb-2 text-sm font-medium text-white">
                   Est. Trade-In Value
                 </label>
                 <input
                   value={tradeValue}
-                  onChange={(e) => setTradeValue(e.target.value)}
+                  onSubmit={(e) => setTradeValue(e.target.value)}
                   type="text"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Amount"
@@ -330,7 +331,7 @@ const Details = () => {
                 </label>
                 <input
                   value={owedValue}
-                  onChange={(e) => setOwedValue(e.target.value)}
+                  onSubmit={(e) => setOwedValue(e.target.value)}
                   type="text"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Amount"
@@ -343,7 +344,7 @@ const Details = () => {
                 </label>
                 <input
                   value={downValue}
-                  onChange={(e) => setDownValue(e.target.value)}
+                  onSubmit={(e) => setDownValue(e.target.value)}
                   type="text"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Amount"
@@ -354,23 +355,17 @@ const Details = () => {
                 <label className="block mb-2 text-xl font-bold text-center text-white">
                   Average Monthly Payment
                 </label>
-                {!null ? (
-                  <div className="text-white mt-4 text-xl font-bold text-center">
-                    Loading...
-                  </div>
-                ) : (
-                  <div className="text-white mt-4 text-xl font-bold text-center">
-                    {(carDetails.price -= dealerDiscount / 60)}
-                  </div>
-                )}
+                <div className="text-white mt-4 text-xl font-bold text-center">
+                  WORK PLEASE
+                </div>
               </div>
             </div>
-            {/* <button
+            <button
               type="submit"
               className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
             >
               Calculate
-            </button> */}
+            </button>
           </form>
         </div>
       </article>
