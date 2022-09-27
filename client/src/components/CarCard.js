@@ -8,6 +8,7 @@ function CarCard({ car }) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
   }
+
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   let n = getRandomInt(10000, 50000);
   let m = getRandomInt(1500, 0);
@@ -35,9 +36,11 @@ function CarCard({ car }) {
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {car.year} {car.make} {car.model} {car.version}{" "}
             {randomState === 1 ? (
-              <span class="text-yellow-700 dark:text-gray-400">${price}</span>
+              <span class="text-yellow-700 dark:text-gray-400">
+                ${car.price.toLocaleString()}
+              </span>
             ) : (
-              <span class="text-green-500">${price}</span>
+              <span class="text-green-500">${car.price.toLocaleString()}</span>
             )}
             <p class="mb-2 mt-4 text-xs font-bold text-gray-500 dark:text-gray-400">
               {car.milage.toLocaleString()} miles

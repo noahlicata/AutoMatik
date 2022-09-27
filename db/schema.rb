@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_170816) do
     t.string "drive_type"
     t.string "fuel_type"
     t.string "engine_size"
+    t.integer "price"
     t.integer "year"
     t.integer "milage"
     t.integer "dealer_id"

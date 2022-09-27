@@ -23,6 +23,7 @@ Dealer.create(
     milage: Faker::Vehicle.mileage,
     car_options: Faker::Vehicle.car_options,
     standard_specs: Faker::Vehicle.standard_specs,
+    price: rand(5000..50000),
     dealer_id: 1,
   )
 end

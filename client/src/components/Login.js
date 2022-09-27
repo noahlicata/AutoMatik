@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { Label, TextInput, Checkbox, Button, Modal } from "flowbite-react";
-// import { LockClosedIcon } from "@heroicons/react/20/solid";
+// import { Label, TextInput, Checkbox, Button, Modal } from "flowbite-react";
 
 function Login({ setCurrentUser, setLoggedIn }) {
   const history = useHistory();

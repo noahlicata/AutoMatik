@@ -4,6 +4,12 @@ import CarCard from "./CarCard";
 function Shop({ cars, currentUser, loggedIn, setCars }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [yearOrder, setYearOrder] = useState(true);
+  const [priceOrder, setPriceOrder] = useState(true);
+  const [milageOrder, setMilageOrder] = useState(true);
+
+  // nonsense
+  const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  // nonsense
 
   const displayedCars = cars.filter((car) => {
     return car.make.toLowerCase().includes(searchTerm.toLowerCase());
@@ -13,22 +19,56 @@ function Shop({ cars, currentUser, loggedIn, setCars }) {
     return <CarCard key={car.id} car={car} />;
   });
 
-  function onSortDesc(e, order, setOrder) {
+  function onSortYearDesc(e, order, setOrder) {
     e.preventDefault();
     const sortedCategory = displayedCars.sort((a, b) => {
       return b.year - a.year;
     });
-    console.log(sortedCategory);
     setOrder(!order);
     setCars([...sortedCategory]);
   }
 
-  function onSortAsc(e, order, setOrder) {
+  function onSortYearAsc(e, order, setOrder) {
     e.preventDefault();
     const sortedCategory = displayedCars.sort((a, b) => {
       return a.year - b.year;
     });
-    console.log(sortedCategory);
+    setOrder(!order);
+    setCars([...sortedCategory]);
+  }
+
+  function onSortPriceDesc(e, order, setOrder) {
+    e.preventDefault();
+    const sortedCategory = displayedCars.sort((a, b) => {
+      return b.price - a.price;
+    });
+    setOrder(!order);
+    setCars([...sortedCategory]);
+  }
+
+  function onSortPriceAsc(e, order, setOrder) {
+    e.preventDefault();
+    const sortedCategory = displayedCars.sort((a, b) => {
+      return a.price - b.price;
+    });
+    setOrder(!order);
+    setCars([...sortedCategory]);
+  }
+
+  function onSortMilageDesc(e, order, setOrder) {
+    e.preventDefault();
+    const sortedCategory = displayedCars.sort((a, b) => {
+      return b.milage - a.milage;
+    });
+    setOrder(!order);
+    setCars([...sortedCategory]);
+  }
+
+  function onSortMilageAsc(e, order, setOrder) {
+    e.preventDefault();
+    const sortedCategory = displayedCars.sort((a, b) => {
+      return a.milage - b.milage;
+    });
     setOrder(!order);
     setCars([...sortedCategory]);
   }
@@ -119,7 +159,9 @@ function Shop({ cars, currentUser, loggedIn, setCars }) {
                     <li class="">
                       <a
                         class="cursor-pointer rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                        onClick={(e) => onSortDesc(e, yearOrder, setYearOrder)}
+                        onClick={(e) =>
+                          onSortYearDesc(e, yearOrder, setYearOrder)
+                        }
                       >
                         Year - Newest
                       </a>
@@ -127,17 +169,55 @@ function Shop({ cars, currentUser, loggedIn, setCars }) {
                     <li class="">
                       <a
                         class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                        onClick={(e) => onSortAsc(e, yearOrder, setYearOrder)}
+                        onClick={(e) =>
+                          onSortYearAsc(e, yearOrder, setYearOrder)
+                        }
                       >
                         Year - Oldest
                       </a>
                     </li>
+
                     <li class="">
                       <a
-                        class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                        href="#"
+                        class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                        onClick={(e) =>
+                          onSortPriceDesc(e, priceOrder, setPriceOrder)
+                        }
                       >
-                        Three is the magic number
+                        Price - Highest
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a
+                        class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                        onClick={(e) =>
+                          onSortPriceAsc(e, priceOrder, setPriceOrder)
+                        }
+                      >
+                        Price - Lowest
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a
+                        class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                        onClick={(e) =>
+                          onSortMilageDesc(e, milageOrder, setMilageOrder)
+                        }
+                      >
+                        Miles - Highest
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <a
+                        class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                        onClick={(e) =>
+                          onSortMilageAsc(e, milageOrder, setMilageOrder)
+                        }
+                      >
+                        Miles - Lowest
                       </a>
                     </li>
                   </ul>
@@ -148,7 +228,7 @@ function Shop({ cars, currentUser, loggedIn, setCars }) {
 
               <div class="flex items-center mb-4">
                 <input
-                  onClick={(e) => onSortDesc(e, yearOrder, setYearOrder)}
+                  onClick={(e) => onSortYearDesc(e, yearOrder, setYearOrder)}
                   id="default-checkbox"
                   type="checkbox"
                   value=""
@@ -163,7 +243,7 @@ function Shop({ cars, currentUser, loggedIn, setCars }) {
               </div>
               <div class="flex items-center mb-4">
                 <input
-                  onClick={(e) => onSortAsc(e, yearOrder, setYearOrder)}
+                  onClick={(e) => onSortYearAsc(e, yearOrder, setYearOrder)}
                   id="default-checkbox"
                   type="checkbox"
                   value=""
