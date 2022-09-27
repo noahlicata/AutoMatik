@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import CarCard from "./CarCard";
 
-function Shop({ cars, currentUser, loggedIn }) {
+function Shop({ cars, currentUser, loggedIn, setCars }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [yearOrder, setYearOrder] = useState(true);
 
   const displayedCars = cars.filter((car) => {
     return car.make.toLowerCase().includes(searchTerm.toLowerCase());
@@ -11,6 +12,26 @@ function Shop({ cars, currentUser, loggedIn }) {
   const carsArr = displayedCars.map((car) => {
     return <CarCard key={car.id} car={car} />;
   });
+
+  function onSortDesc(e, order, setOrder) {
+    e.preventDefault();
+    const sortedCategory = displayedCars.sort((a, b) => {
+      return b.year - a.year;
+    });
+    console.log(sortedCategory);
+    setOrder(!order);
+    setCars([...sortedCategory]);
+  }
+
+  function onSortAsc(e, order, setOrder) {
+    e.preventDefault();
+    const sortedCategory = displayedCars.sort((a, b) => {
+      return a.year - b.year;
+    });
+    console.log(sortedCategory);
+    setOrder(!order);
+    setCars([...sortedCategory]);
+  }
 
   return (
     <div className="p-4">
@@ -82,26 +103,52 @@ function Shop({ cars, currentUser, loggedIn }) {
                 </span>
               </li>
 
-              <label for="underline_select" class="sr-only">
-                Underline select
-              </label>
-              <select
-                id="underline_select"
-                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
-              >
-                <option selected="">Sort By:</option>
-                <option value="US">Price - Lowest</option>
-                <option value="US">Price - Highest</option>
-                <option value="CA">Milage - Lowest</option>
-                <option value="CA">Milage - Highest</option>
-                <option value="FR">Year - Lowest</option>
-                <option value="FR">Year - Highest</option>
-              </select>
+              <div>
+                <div class="dropdown inline-block relative">
+                  <button class="bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded inline-flex items-center">
+                    <span class="mr-1">Sort by:</span>
+                    <svg
+                      class="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />{" "}
+                    </svg>
+                  </button>
+                  <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                    <li class="">
+                      <a
+                        class="cursor-pointer rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                        onClick={(e) => onSortDesc(e, yearOrder, setYearOrder)}
+                      >
+                        Year - Newest
+                      </a>
+                    </li>
+                    <li class="">
+                      <a
+                        class="cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                        onClick={(e) => onSortAsc(e, yearOrder, setYearOrder)}
+                      >
+                        Year - Oldest
+                      </a>
+                    </li>
+                    <li class="">
+                      <a
+                        class="rounded-b bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                        href="#"
+                      >
+                        Three is the magic number
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
 
               {/* check boxes */}
 
               <div class="flex items-center mb-4">
                 <input
+                  onClick={(e) => onSortDesc(e, yearOrder, setYearOrder)}
                   id="default-checkbox"
                   type="checkbox"
                   value=""
@@ -116,6 +163,7 @@ function Shop({ cars, currentUser, loggedIn }) {
               </div>
               <div class="flex items-center mb-4">
                 <input
+                  onClick={(e) => onSortAsc(e, yearOrder, setYearOrder)}
                   id="default-checkbox"
                   type="checkbox"
                   value=""

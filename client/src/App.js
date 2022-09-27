@@ -72,7 +72,12 @@ function App() {
               />
             </Route>
             <Route exact path="/cars">
-              <Shop cars={cars} currentUser={currentUser} loggedIn={loggedIn} />
+              <Shop
+                cars={cars}
+                currentUser={currentUser}
+                loggedIn={loggedIn}
+                setCars={setCars}
+              />
             </Route>
             <Route exact path="/sell">
               <Sell />
