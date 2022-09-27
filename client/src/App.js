@@ -11,6 +11,7 @@ import Sell from "./components/Sell";
 import Contact from "./components/Contact";
 import Details from "./components/Details";
 import Footer from "./components/Footer";
+import Forgot from "./components/Forgot";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -71,7 +72,7 @@ function App() {
               />
             </Route>
             <Route exact path="/cars">
-              <Shop cars={cars} />
+              <Shop cars={cars} currentUser={currentUser} loggedIn={loggedIn} />
             </Route>
             <Route exact path="/sell">
               <Sell />
@@ -81,6 +82,9 @@ function App() {
             </Route>
             <Route exact path="/cars/:id">
               <Details />
+            </Route>
+            <Route exact path="/forgot">
+              <Forgot />
             </Route>
           </Switch>
           <Footer />
