@@ -40,10 +40,6 @@ function Login({ setCurrentUser, setLoggedIn }) {
     });
   }
 
-  const handleGoBack = () => {
-    history.goBack();
-  };
-
   return (
     // <React.Fragment>
     //   <Modal show={true} size="md" popup={true}>

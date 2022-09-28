@@ -92,7 +92,7 @@ function NavBar({ currentUser, setCurrentUser, loggedIn, setLoggedIn }) {
       <Navbar.Collapse>
         <Navbar.Link href="/">Home</Navbar.Link>
         <Navbar.Link href="/cars">Shop</Navbar.Link>
-        <Navbar.Link href="/sell">Sell</Navbar.Link>
+        <Navbar.Link href="/dealer">Dealer</Navbar.Link>
         <Navbar.Link href="/contact">Contact</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
