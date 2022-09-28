@@ -29,7 +29,7 @@ function Shop({
     return car.make.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-  const carsArr = displayedCars.map((car) => {
+  const carsObj = displayedCars.map((car) => {
     return <CarCard key={car.id} car={car} price={price} />;
   });
 
@@ -363,7 +363,7 @@ function Shop({
                 </ul>
               </div>
             </aside>
-            <div className="flex flex-col ml-10">{carsArr}</div>
+            <div className="flex flex-col ml-10">{carsObj}</div>
           </div>
         </div>
       )}

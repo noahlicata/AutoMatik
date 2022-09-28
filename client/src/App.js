@@ -14,16 +14,14 @@ import Footer from "./components/Footer";
 import Forgot from "./components/Forgot";
 import DealerLogin from "./components/DealerLogin";
 import DealerDash from "./components/DealerDash";
+import DashDetails from "./components/DashDetails";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [cars, setCars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  // const displayedCars = cars.filter((car) => {
-  //   return car.make.toLowerCase().includes(searchTerm.toLowerCase());
-  // });
+  const [isDealer, setIsDealer] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -53,6 +51,8 @@ function App() {
             setCurrentUser={setCurrentUser}
             loggedIn={loggedIn}
             setLoggedIn={setLoggedIn}
+            isDealer={isDealer}
+            setIsDealer={setIsDealer}
           />
           <Switch>
             <Route exact path="/">
@@ -105,7 +105,14 @@ function App() {
               />
             </Route>
             <Route exact path="/dashboard">
-              <DealerDash />
+              <DealerDash
+                isDealer={isDealer}
+                setIsDealer={setIsDealer}
+                cars={cars}
+              />
+            </Route>
+            <Route exact path="/dashboard/:id">
+              <DashDetails />
             </Route>
           </Switch>
           <Footer />
