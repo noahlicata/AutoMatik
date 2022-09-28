@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_23_170816) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_28_003619) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,15 +24,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_170816) do
     t.string "drive_type"
     t.string "fuel_type"
     t.string "engine_size"
-    t.integer "price"
     t.integer "year"
     t.integer "milage"
     t.integer "dealer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
-    t.string "car_options", array: true, default: []
-    t.string "standard_specs", array: true, default: []
+    t.string "car_options"
+    t.string "standard_specs"
+    t.integer "price"
   end
 
   create_table "dealers", force: :cascade do |t|
@@ -57,4 +57,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_170816) do
     t.datetime "updated_at", null: false
     t.string "image"
   end
+
 end

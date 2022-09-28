@@ -44,7 +44,7 @@ function CarCard({ car }) {
               </span>
             )}
             <p className="mb-2 mt-4 text-xs font-bold text-gray-500 dark:text-gray-400">
-              {car.milage} miles
+              {car.milage.toLocaleString()} miles
             </p>
           </h5>
           <p className=" font-normal text-sm text-gray-700 dark:text-gray-400">
@@ -132,7 +132,7 @@ function CarCard({ car }) {
               </span>
             )}
 
-            {car.year >= 2022 && car.milage <= 10 ? (
+            {car.year >= 2021 && car.milage <= 1000 ? (
               <span>
                 <Tooltip
                   content="Car is brand new, any existing miles are from test drives."

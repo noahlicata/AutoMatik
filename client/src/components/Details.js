@@ -19,8 +19,6 @@ const Details = () => {
     setTotal();
   };
 
-  console.log(total);
-
   const { id } = useParams();
 
   function getRandomInt(min, max) {
@@ -204,7 +202,7 @@ const Details = () => {
                   {carDetails.engine_size}
                 </div>
               </div>
-              <div className="flex flex-col items-center mt-4">
+              {/* <div className="flex flex-col items-center mt-4">
                 <span className="text-l font-bold text-gray-900">Options</span>
                 {options.map((option) => {
                   return (
@@ -223,7 +221,7 @@ const Details = () => {
                     </p>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

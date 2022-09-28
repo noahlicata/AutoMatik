@@ -14,7 +14,15 @@ function Shop({
   const [yearOrder, setYearOrder] = useState(true);
 
   // nonsense
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+  let price = getRandomInt(5000, 120000);
   // nonsense
 
   const displayedCars = cars.filter((car) => {
@@ -22,7 +30,7 @@ function Shop({
   });
 
   const carsArr = displayedCars.map((car) => {
-    return <CarCard key={car.id} car={car} />;
+    return <CarCard key={car.id} car={car} price={price} />;
   });
 
   function onSortDesc(e, attr, order, setOrder) {
@@ -49,22 +57,26 @@ function Shop({
 
   // test
 
-  function onSortDescAdvanced(e, attr1, attr2, order, setOrder) {
+  function onSortDescAlt(e, order, setOrder) {
+    setIsLoading(true);
     e.preventDefault();
     const sortedCategory = displayedCars.sort((a, b) => {
-      return b[attr1][attr2] - a[attr1][attr2];
+      return b.price - a.price;
     });
     setOrder(!order);
     setCars([...sortedCategory]);
+    setIsLoading(false);
   }
 
-  function onSortAscAdvanced(e, attr1, attr2, order, setOrder) {
+  function onSortAscAlt(e, order, setOrder) {
+    setIsLoading(true);
     e.preventDefault();
     const sortedCategory = displayedCars.sort((a, b) => {
-      return b[attr1] - a[attr1] && b[attr2] - a[attr2];
+      return a.price - b.price;
     });
     setOrder(!order);
     setCars([...sortedCategory]);
+    setIsLoading(false);
   }
 
   return (
@@ -185,7 +197,7 @@ function Shop({
                             name="price"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                             onClick={(e) =>
-                              onSortDesc(e, "price", yearOrder, setYearOrder)
+                              onSortDescAlt(e, yearOrder, setYearOrder)
                             }
                           >
                             Price - Highest
@@ -197,7 +209,7 @@ function Shop({
                             name="price"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                             onClick={(e) =>
-                              onSortAsc(e, "price", yearOrder, setYearOrder)
+                              onSortAscAlt(e, yearOrder, setYearOrder)
                             }
                           >
                             Price - Lowest
@@ -237,7 +249,7 @@ function Shop({
                     <input
                       name="year"
                       onClick={(e) =>
-                        onSortAscAdvanced(
+                        onSortAscAlt(
                           e,
                           "year",
                           "milage",
