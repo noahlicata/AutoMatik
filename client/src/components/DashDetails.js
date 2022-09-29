@@ -3,8 +3,17 @@ import { useParams } from "react-router-dom";
 
 const DashDetails = () => {
   const [randomState, setRandomState] = useState(1);
-  const [carDetails, setCarDetails] = useState({});
+  const [carDetails, setCarDetails] = useState({
+    car_options: [],
+    standard_specs: [],
+  });
   const { id } = useParams();
+
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
 
   useEffect(() => {
     fetch(`/dashboard/${id}`)
@@ -15,8 +24,10 @@ const DashDetails = () => {
       });
   }, []);
 
+  console.log(carDetails.car_options);
+
   return (
-    <div>
+    <div className="">
       <div class="overflow-hidden bg-white shadow sm:rounded-lg">
         <div class="px-4 py-5 sm:px-6">
           <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -24,47 +35,143 @@ const DashDetails = () => {
             {carDetails.version}
           </h3>
           <p class="mt-1 max-w-2xl text-sm text-gray-500">
-            Personal details and application.
+            Posted {getRandomInt(0, 20)} days ago
           </p>
         </div>
         <div class="border-t border-gray-200">
           <dl>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class="text-sm font-medium text-gray-500">Full name</dt>
+              <dt class="text-sm font-medium text-gray-500">VIN</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                Margot Foster
+                {carDetails.vin}
               </dd>
             </div>
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class="text-sm font-medium text-gray-500">Application for</dt>
+              <dt class="text-sm font-medium text-gray-500">Color</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                Backend Developer
+                {carDetails.color}
               </dd>
             </div>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class="text-sm font-medium text-gray-500">Email address</dt>
+              <dt class="text-sm font-medium text-gray-500">Transmission</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                margotfoster@example.com
+                {carDetails.transmission}
               </dd>
             </div>
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class="text-sm font-medium text-gray-500">
-                Salary expectation
-              </dt>
+              <dt class="text-sm font-medium text-gray-500">Drive Type</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                $120,000
+                {carDetails.drive_type}
               </dd>
             </div>
             <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-              <dt class="text-sm font-medium text-gray-500">About</dt>
+              <dt class="text-sm font-medium text-gray-500">Fuel Type</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim
-                incididunt cillum culpa consequat. Excepteur qui ipsum aliquip
-                consequat sint. Sit id mollit nulla mollit nostrud in ea officia
-                proident. Irure nostrud pariatur mollit ad adipisicing
-                reprehenderit deserunt qui eu.
+                {carDetails.fuel_type}
               </dd>
             </div>
+            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-500">Engine Size</dt>
+              <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                {carDetails.engine_size}
+              </dd>
+            </div>
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-500">Options</dt>
+              {carDetails.car_options.map((option) => {
+                return (
+                  <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                    {option}
+                  </dd>
+                );
+              })}
+            </div>
+            <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-500">Specs</dt>
+              {carDetails.standard_specs.map((spec) => {
+                return (
+                  <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                    {spec}
+                  </dd>
+                );
+              })}
+            </div>
+            <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+              <dt class="text-sm font-medium text-gray-500">Images</dt>
+              <section class="overflow-hidden text-gray-700 ">
+                <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
+                  <div class="flex flex-wrap -m-1 md:-m-2">
+                    <div class="flex flex-wrap w-1/3">
+                      <div class="w-full p-1 md:p-2">
+                        <img
+                          alt="gallery"
+                          class="block object-cover object-center w-full h-full rounded-lg"
+                          src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
+                            Math.random() * 101
+                          )}`}
+                        />
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap w-1/3">
+                      <div class="w-full p-1 md:p-2">
+                        <img
+                          alt="gallery"
+                          class="block object-cover object-center w-full h-full rounded-lg"
+                          src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
+                            Math.random() * 101
+                          )}`}
+                        />
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap w-1/3">
+                      <div class="w-full p-1 md:p-2">
+                        <img
+                          alt="gallery"
+                          class="block object-cover object-center w-full h-full rounded-lg"
+                          src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
+                            Math.random() * 101
+                          )}`}
+                        />
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap w-1/3">
+                      <div class="w-full p-1 md:p-2">
+                        <img
+                          alt="gallery"
+                          class="block object-cover object-center w-full h-full rounded-lg"
+                          src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
+                            Math.random() * 101
+                          )}`}
+                        />
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap w-1/3">
+                      <div class="w-full p-1 md:p-2">
+                        <img
+                          alt="gallery"
+                          class="block object-cover object-center w-full h-full rounded-lg"
+                          src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
+                            Math.random() * 101
+                          )}`}
+                        />
+                      </div>
+                    </div>
+                    <div class="flex flex-wrap w-1/3">
+                      <div class="w-full p-1 md:p-2">
+                        <img
+                          alt="gallery"
+                          class="block object-cover object-center w-full h-full rounded-lg"
+                          src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
+                            Math.random() * 101
+                          )}`}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
             <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt class="text-sm font-medium text-gray-500">Attachments</dt>
               <dd class="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
@@ -87,9 +194,7 @@ const DashDetails = () => {
                           clip-rule="evenodd"
                         />
                       </svg>
-                      <span class="ml-2 w-0 flex-1 truncate">
-                        resume_back_end_developer.pdf
-                      </span>
+                      <span class="ml-2 w-0 flex-1 truncate">car_image_1</span>
                     </div>
                     <div class="ml-4 flex-shrink-0">
                       <a
@@ -115,9 +220,7 @@ const DashDetails = () => {
                           clip-rule="evenodd"
                         />
                       </svg>
-                      <span class="ml-2 w-0 flex-1 truncate">
-                        coverletter_back_end_developer.pdf
-                      </span>
+                      <span class="ml-2 w-0 flex-1 truncate">car_image_2</span>
                     </div>
                     <div class="ml-4 flex-shrink-0">
                       <a
