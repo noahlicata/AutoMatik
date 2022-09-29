@@ -68,7 +68,6 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                       </svg>
                     </div>
                   </div>
-                  {/* <div>{carsObj}</div> */}
                   <Table>
                     <Table.Head>
                       <Table.HeadCell>Vehicle</Table.HeadCell>
@@ -89,9 +88,6 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                       <h3 class="text-xl font-bold text-gray-900 mb-2">
                         Latest Transactions
                       </h3>
-                      <span class="text-base font-normal text-gray-500">
-                        This is a list of latest transactions
-                      </span>
                     </div>
                     <div class="flex-shrink-0">
                       <a
@@ -102,135 +98,93 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                       </a>
                     </div>
                   </div>
-                  <div class="flex flex-col mt-8">
-                    <div class="overflow-x-auto rounded-lg">
-                      <div class="align-middle inline-block min-w-full">
-                        <div class="shadow overflow-hidden sm:rounded-lg">
-                          <table class="min-w-full divide-y divide-gray-200">
-                            <thead class="bg-gray-50">
-                              <tr>
-                                <th
-                                  scope="col"
-                                  class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                >
-                                  Transaction
-                                </th>
-                                <th
-                                  scope="col"
-                                  class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                >
-                                  Date & Time
-                                </th>
-                                <th
-                                  scope="col"
-                                  class="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                                >
-                                  Amount
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody class="bg-white">
-                              <tr>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span class="font-semibold">
-                                    Bonnie Green
-                                  </span>
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 23 ,2021
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  ${getRandomInt(444, 4444).toLocaleString()}.
-                                  {getRandomInt(10, 99)}
-                                </td>
-                              </tr>
-                              <tr class="bg-gray-50">
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment refund to{" "}
-                                  <span class="font-semibold">#00910</span>
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 23 ,2021
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  ${getRandomInt(444, 4444).toLocaleString()}.
-                                  {getRandomInt(0, 99)}
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment failed from{" "}
-                                  <span class="font-semibold">#087651</span>
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 18 ,2021
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  ${getRandomInt(444, 4444).toLocaleString()}.
-                                  {getRandomInt(0, 99)}
-                                </td>
-                              </tr>
-                              <tr class="bg-gray-50">
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment from{" "}
-                                  <span class="font-semibold">Lana Byrd</span>
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 15 ,2021
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  ${getRandomInt(444, 4444).toLocaleString()}.
-                                  {getRandomInt(0, 99)}
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span class="font-semibold">Jese Leos</span>
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 15 ,2021
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  ${getRandomInt(444, 4444).toLocaleString()}.
-                                  {getRandomInt(0, 99)}
-                                </td>
-                              </tr>
-                              <tr class="bg-gray-50">
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900 rounded-lg rounded-left">
-                                  Payment from{" "}
-                                  <span class="font-semibold">
-                                    THEMESBERG LLC
-                                  </span>
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 11 ,2021
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  ${getRandomInt(444, 4444).toLocaleString()}.
-                                  {getRandomInt(0, 99)}
-                                </td>
-                              </tr>
-                              <tr>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-900">
-                                  Payment from{" "}
-                                  <span class="font-semibold">Lana Lysle</span>
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-normal text-gray-500">
-                                  Apr 6 ,2021
-                                </td>
-                                <td class="p-4 whitespace-nowrap text-sm font-semibold text-gray-900">
-                                  ${getRandomInt(444, 4444).toLocaleString()}.
-                                  {getRandomInt(0, 99)}
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Table>
+                    <Table.Head>
+                      <Table.HeadCell>TRANSACTION ID</Table.HeadCell>
+                      <Table.HeadCell>DATE</Table.HeadCell>
+                      <Table.HeadCell>AMOUNT</Table.HeadCell>
+                    </Table.Head>
+                    <Table.Body className="divide-y">
+                      <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                          #A-IT{getRandomInt(100, 999)}-{getRandomInt(10, 99)}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {getRandomInt(1, 12)}/{getRandomInt(1, 31)}
+                          /2022
+                        </Table.Cell>
+                        <Table.Cell>
+                          ${getRandomInt(444, 4444).toLocaleString()}.
+                          {getRandomInt(10, 99)}
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                          #A-IT{getRandomInt(100, 999)}-{getRandomInt(10, 99)}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {getRandomInt(1, 12)}/{getRandomInt(1, 31)}
+                          /2022
+                        </Table.Cell>
+                        <Table.Cell>
+                          ${getRandomInt(444, 4444).toLocaleString()}.
+                          {getRandomInt(10, 99)}
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                          #A-IT{getRandomInt(100, 999)}-{getRandomInt(10, 99)}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {getRandomInt(1, 12)}/{getRandomInt(1, 31)}
+                          /2022
+                        </Table.Cell>
+                        <Table.Cell>
+                          ${getRandomInt(444, 4444).toLocaleString()}.
+                          {getRandomInt(10, 99)}
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                          #A-IT{getRandomInt(100, 999)}-{getRandomInt(10, 99)}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {getRandomInt(1, 12)}/{getRandomInt(1, 31)}
+                          /2022
+                        </Table.Cell>
+                        <Table.Cell>
+                          ${getRandomInt(444, 4444).toLocaleString()}.
+                          {getRandomInt(10, 99)}
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                          #A-IT{getRandomInt(100, 999)}-{getRandomInt(10, 99)}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {getRandomInt(1, 12)}/{getRandomInt(1, 31)}
+                          /2022
+                        </Table.Cell>
+                        <Table.Cell>
+                          ${getRandomInt(444, 4444).toLocaleString()}.
+                          {getRandomInt(10, 99)}
+                        </Table.Cell>
+                      </Table.Row>
+                      <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+                        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                          #A-IT{getRandomInt(100, 999)}-{getRandomInt(10, 99)}
+                        </Table.Cell>
+                        <Table.Cell>
+                          {getRandomInt(1, 12)}/{getRandomInt(1, 31)}
+                          /2022
+                        </Table.Cell>
+                        <Table.Cell>
+                          ${getRandomInt(444, 4444).toLocaleString()}.
+                          {getRandomInt(10, 99)}
+                        </Table.Cell>
+                      </Table.Row>
+                    </Table.Body>
+                  </Table>
                 </div>
               </div>
               <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -292,14 +246,14 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                   <div class="flex items-center">
                     <div class="flex-shrink-0">
                       <span class="text-2xl sm:text-3xl leading-none font-bold text-gray-900">
-                        {getRandomInt()}
+                        {getRandomInt(1, 16)}
                       </span>
                       <h3 class="text-base font-normal text-gray-500">
-                        User signups this week
+                        Payments processed this week
                       </h3>
                     </div>
                     <div class="ml-5 w-0 flex items-center justify-end flex-1 text-red-500 text-base font-bold">
-                      -{getRandomInt(1, 7)}%
+                      -{getRandomInt(1, 2)}%
                       <svg
                         class="w-5 h-5"
                         fill="currentColor"
@@ -336,7 +290,9 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                           <div class="flex-shrink-0">
                             <img
                               class="h-8 w-8 rounded-full"
-                              src="https://demo.themesberg.com/windster/images/users/neil-sims.png"
+                              src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
+                                Math.random() * 101
+                              )}`}
                               alt="Neil image"
                             />
                           </div>
@@ -350,12 +306,13 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                                 class="__cf_email__"
                                 data-cfemail="17727a767e7b57607e7973646372653974787a"
                               >
-                                [email&#160;protected]
+                                randomemail@email.com
                               </a>
                             </p>
                           </div>
                           <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                            $320
+                            ${getRandomInt(100, 4200).toLocaleString()}.
+                            {getRandomInt(10, 99)}
                           </div>
                         </div>
                       </li>
@@ -364,7 +321,9 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                           <div class="flex-shrink-0">
                             <img
                               class="h-8 w-8 rounded-full"
-                              src="https://demo.themesberg.com/windster/images/users/bonnie-green.png"
+                              src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
+                                Math.random() * 101
+                              )}`}
                               alt="Neil image"
                             />
                           </div>
@@ -378,12 +337,13 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                                 class="__cf_email__"
                                 data-cfemail="d4b1b9b5bdb894a3bdbab0a7a0b1a6fab7bbb9"
                               >
-                                [email&#160;protected]
+                                randomemail@email.com
                               </a>
                             </p>
                           </div>
                           <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                            $3467
+                            ${getRandomInt(100, 4200).toLocaleString()}.
+                            {getRandomInt(10, 99)}
                           </div>
                         </div>
                       </li>
@@ -392,7 +352,9 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                           <div class="flex-shrink-0">
                             <img
                               class="h-8 w-8 rounded-full"
-                              src="https://demo.themesberg.com/windster/images/users/michael-gough.png"
+                              src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
+                                Math.random() * 101
+                              )}`}
                               alt="Neil image"
                             />
                           </div>
@@ -406,12 +368,13 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                                 class="__cf_email__"
                                 data-cfemail="57323a363e3b17203e3933242332257934383a"
                               >
-                                [email&#160;protected]
+                                randomemail@email.com
                               </a>
                             </p>
                           </div>
                           <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                            $67
+                            ${getRandomInt(100, 4200).toLocaleString()}.
+                            {getRandomInt(10, 99)}
                           </div>
                         </div>
                       </li>
@@ -420,7 +383,9 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                           <div class="flex-shrink-0">
                             <img
                               class="h-8 w-8 rounded-full"
-                              src="https://demo.themesberg.com/windster/images/users/thomas-lean.png"
+                              src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
+                                Math.random() * 101
+                              )}`}
                               alt="Neil image"
                             />
                           </div>
@@ -434,12 +399,13 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                                 class="__cf_email__"
                                 data-cfemail="284d45494144685f41464c5b5c4d5a064b4745"
                               >
-                                [email&#160;protected]
+                                randomemail@email.com
                               </a>
                             </p>
                           </div>
                           <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                            $2367
+                            ${getRandomInt(100, 4200).toLocaleString()}.
+                            {getRandomInt(10, 99)}
                           </div>
                         </div>
                       </li>
@@ -448,7 +414,9 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                           <div class="flex-shrink-0">
                             <img
                               class="h-8 w-8 rounded-full"
-                              src="https://demo.themesberg.com/windster/images/users/lana-byrd.png"
+                              src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
+                                Math.random() * 101
+                              )}`}
                               alt="Neil image"
                             />
                           </div>
@@ -462,12 +430,13 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                                 class="__cf_email__"
                                 data-cfemail="a2c7cfc3cbcee2d5cbccc6d1d6c7d08cc1cdcf"
                               >
-                                [email&#160;protected]
+                                randomemail@email.com
                               </a>
                             </p>
                           </div>
                           <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                            $367
+                            ${getRandomInt(100, 4200).toLocaleString()}.
+                            {getRandomInt(10, 99)}
                           </div>
                         </div>
                       </li>
@@ -476,17 +445,17 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                 </div>
                 <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
                   <h3 class="text-xl leading-none font-bold text-gray-900 mb-10">
-                    Acquisition Overview
+                    Overview
                   </h3>
                   <div class="block w-full overflow-x-auto">
                     <table class="items-center w-full bg-transparent border-collapse">
                       <thead>
                         <tr>
                           <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                            Top Channels
+                            Top Brands
                           </th>
                           <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap">
-                            Users
+                            Sales
                           </th>
                           <th class="px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs font-semibold text-left uppercase border-l-0 border-r-0 whitespace-nowrap min-w-140-px"></th>
                         </tr>
@@ -494,10 +463,10 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                       <tbody class="divide-y divide-gray-100">
                         <tr class="text-gray-500">
                           <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
-                            Organic Search
+                            Ford
                           </th>
                           <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
-                            5,649
+                            {getRandomInt(27, 32)}
                           </td>
                           <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                             <div class="flex items-center">
@@ -515,10 +484,10 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                         </tr>
                         <tr class="text-gray-500">
                           <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
-                            Referral
+                            Honda
                           </th>
                           <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
-                            4,025
+                            {getRandomInt(23, 27)}
                           </td>
                           <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                             <div class="flex items-center">
@@ -536,10 +505,10 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                         </tr>
                         <tr class="text-gray-500">
                           <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
-                            Direct
+                            Toyota
                           </th>
                           <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
-                            3,105
+                            {getRandomInt(18, 23)}
                           </td>
                           <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                             <div class="flex items-center">
@@ -557,10 +526,10 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                         </tr>
                         <tr class="text-gray-500">
                           <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
-                            Social
+                            Dodge
                           </th>
                           <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
-                            1251
+                            {getRandomInt(12, 18)}
                           </td>
                           <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                             <div class="flex items-center">
@@ -578,10 +547,10 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                         </tr>
                         <tr class="text-gray-500">
                           <th class="border-t-0 px-4 align-middle text-sm font-normal whitespace-nowrap p-4 text-left">
-                            Other
+                            Chevrolet
                           </th>
                           <td class="border-t-0 px-4 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4">
-                            734
+                            {getRandomInt(7, 12)}
                           </td>
                           <td class="border-t-0 px-4 align-middle text-xs whitespace-nowrap p-4">
                             <div class="flex items-center">
@@ -599,10 +568,10 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                         </tr>
                         <tr class="text-gray-500">
                           <th class="border-t-0 align-middle text-sm font-normal whitespace-nowrap p-4 pb-0 text-left">
-                            Email
+                            Audi
                           </th>
                           <td class="border-t-0 align-middle text-xs font-medium text-gray-900 whitespace-nowrap p-4 pb-0">
-                            456
+                            {getRandomInt(1, 7)}
                           </td>
                           <td class="border-t-0 align-middle text-xs whitespace-nowrap p-4 pb-0">
                             <div class="flex items-center">
@@ -627,8 +596,6 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
           </main>
         </div>
       </div>
-      <script async defer src="https://buttons.github.io/buttons.js"></script>
-      <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
     </div>
   );
 };

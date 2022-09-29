@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import { Carousel } from "flowbite-react";
 
 const DashDetails = () => {
+  const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   const [randomState, setRandomState] = useState(1);
   const [carDetails, setCarDetails] = useState({
     car_options: [],
     standard_specs: [],
   });
+
   const { id } = useParams();
 
   function getRandomInt(min, max) {
