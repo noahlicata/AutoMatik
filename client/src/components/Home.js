@@ -16,9 +16,9 @@ const Home = ({ loggedIn, currentUser }) => {
               </h1>
             )}
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
-              Sutff and things about cars! More stuff and more things and more
-              stuff and more things. Stuff. Things. And, believe it or not,
-              stuff. And also things!
+              Here at AutoMatik, we make it easier than ever to find your dream
+              car at the best price possible. Just visit the shop, filter your
+              searches, and remember to save your favorites!
             </p>
             <a
               href="/dealer"
@@ -69,17 +69,17 @@ const Home = ({ loggedIn, currentUser }) => {
           </div>
           <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-              Sutff and things about cars!
+              Our Sellers
             </h2>
             <p class="mb-4">
-              Here at AutoMatik, sutff and things about cars! More stuff and
-              more things and more stuff and more things. Stuff. Things. And,
-              believe it or not, stuff. And also things!
+              We carry a wide variety of vehicles from many dealers around the
+              country. From 4runners and Broncos to Mercedes AMGs and Audi RS
+              Models, we have it all!
             </p>
             <p>
-              More sutff and things about cars! More stuff and more things and
-              more stuff and more things. Stuff. Things. And, believe it or not,
-              stuff. And also things!
+              Our dealerships are certified using AutoMatik's DVS or dealer
+              verification system, which requires dealerships to maintain a 4+
+              star rating overall, and adhere to strict standards.
             </p>
           </div>
         </div>

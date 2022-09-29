@@ -29,6 +29,10 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
     return <DashCard key={car.id} car={car} price={price} />;
   });
 
+  const newVehicleForm = () => {
+    console.log("test");
+  };
+
   return (
     <div>
       <div class="bg-white">
@@ -74,6 +78,12 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                       <Table.HeadCell>Color</Table.HeadCell>
                       <Table.HeadCell>Miles</Table.HeadCell>
                       <Table.HeadCell>Price</Table.HeadCell>
+                      <Table.HeadCell
+                        className="cursor-pointer hover:underline text-green-500"
+                        onClick={newVehicleForm}
+                      >
+                        Add New Vehicle +
+                      </Table.HeadCell>
                       <Table.HeadCell>
                         <span className="sr-only">Edit</span>
                       </Table.HeadCell>
