@@ -4,6 +4,7 @@ import { Table } from "flowbite-react";
 
 const DealerDash = ({ isDealer, setIsDealer, cars }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [limit, setLimit] = useState([]);
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -12,13 +13,22 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   let price = getRandomInt(5000, 120000);
 
-  const displayedCars = cars.filter((car) => {
+  useEffect(() => {
+    fetch("/limit")
+      .then((res) => res.json())
+      .then((cars) => {
+        setLimit(cars);
+      });
+  }, []);
+
+  const displayedCars = limit.filter((car) => {
     return car.make.toLowerCase().includes(searchTerm.toLowerCase());
   });
 
   const carsObj = displayedCars.map((car) => {
     return <DashCard key={car.id} car={car} price={price} />;
   });
+
   return (
     <div>
       <div class="bg-white">
@@ -37,6 +47,9 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                       </span>
                       <h3 class="text-base font-normal text-gray-500">
                         Sales this week
+                      </h3>
+                      <h3 class="text-sm font-normal text-blue-500">
+                        {displayedCars.length} vehicles listed
                       </h3>
                     </div>
                     <div class="flex items-center justify-end flex-1 text-green-500 text-base font-bold">

@@ -3,6 +3,11 @@ class CarsController < ApplicationController
     render json: Car.all
   end
 
+  def limit
+    cars = Car.all.limit(8)
+    render json: cars
+  end
+
   def show
     car = Car.find_by!(id: params[:id])
     render json: car, status: :ok
