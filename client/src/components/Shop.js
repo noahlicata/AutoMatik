@@ -148,13 +148,73 @@ function Shop({
                   </span>
                 </a>
                 <ul className="space-y-2">
-                  <li>
-                    <a className="flex items-center text-base font-normal text-gray-900 rounded-lg dark:text-white ">
-                      <span className="ml-3 font-semibold">
-                        Hi {currentUser.email}!
-                      </span>
-                    </a>
-                  </li>
+                  {!loggedIn ? (
+                    <li>
+                      <a className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                        <span className="ml-3">
+                          Welcome! Use the search bar and filters to narrow down
+                          your selection. If you find something you like,
+                          remember to save it to your favorites!
+                        </span>
+                      </a>
+                    </li>
+                  ) : (
+                    <li>
+                      <a className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                        <span className="ml-3">
+                          Welcome back {currentUser.email}! Use the search bar
+                          and filters to narrow down your selection. If you find
+                          something you like, remember to save it to your
+                          favorites!
+                        </span>
+                      </a>
+                    </li>
+                  )}
+
+                  {/* check boxes */}
+
+                  <div className="flex items-center mb-4">
+                    <input
+                      name="year"
+                      onClick={(e) =>
+                        onSortAscAlt(
+                          e,
+                          "year",
+                          "milage",
+                          yearOrder,
+                          setYearOrder
+                        )
+                      }
+                      id="default-checkbox"
+                      type="checkbox"
+                      value=""
+                      className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      htmlFor="default-checkbox"
+                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >
+                      New
+                    </label>
+                  </div>
+                  <div className="flex items-center mb-4">
+                    <input
+                      name="year"
+                      onClick={(e) =>
+                        onSortAsc(e, "year", yearOrder, setYearOrder)
+                      }
+                      id="default-checkbox"
+                      type="checkbox"
+                      value=""
+                      className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    />
+                    <label
+                      htmlFor="default-checkbox"
+                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    >
+                      Used
+                    </label>
+                  </div>
 
                   <div>
                     <div className="dropdown inline-block relative">
@@ -243,98 +303,7 @@ function Shop({
                     </div>
                   </div>
 
-                  {/* check boxes */}
-
-                  <div className="flex items-center mb-4">
-                    <input
-                      name="year"
-                      onClick={(e) =>
-                        onSortAscAlt(
-                          e,
-                          "year",
-                          "milage",
-                          yearOrder,
-                          setYearOrder
-                        )
-                      }
-                      id="default-checkbox"
-                      type="checkbox"
-                      value=""
-                      className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                    />
-                    <label
-                      htmlFor="default-checkbox"
-                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    >
-                      New
-                    </label>
-                  </div>
-                  <div className="flex items-center mb-4">
-                    <input
-                      name="year"
-                      onClick={(e) =>
-                        onSortAsc(e, "year", yearOrder, setYearOrder)
-                      }
-                      id="default-checkbox"
-                      type="checkbox"
-                      value=""
-                      className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                    />
-                    <label
-                      htmlFor="default-checkbox"
-                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    >
-                      Used
-                    </label>
-                  </div>
                   <p className="text-sm pt-1">{displayedCars.length} Results</p>
-                  <li>
-                    <a
-                      href="#"
-                      className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                      </svg>
-
-                      <span className="pl-2">Clear Filters</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="signin"
-                      className="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                        ></path>
-                      </svg>
-                      <span className="flex-1 ml-3 whitespace-nowrap">
-                        Save Search
-                      </span>
-                    </a>
-                  </li>
                   {loggedIn ? null : (
                     <li>
                       <a

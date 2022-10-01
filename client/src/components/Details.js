@@ -224,6 +224,57 @@ const Details = () => {
               </div> */}
             </div>
           </div>
+
+          {/* split */}
+
+          <div className="mt-10 w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div className="px-5 pb-5">
+              <div className="items-center">
+                <span className="text-l font-bold text-gray-900">
+                  The {carDetails.year} {carDetails.make} {carDetails.model}
+                </span>{" "}
+                <span className="text-sm text-gray-700">
+                  lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </span>
+                <div>
+                  <br></br>
+                  <p className="text-sm text-gray-700">
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum. Lorem ipsum dolor sit
+                    amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut aliquip ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+              {/* <div className="flex flex-col items-center mt-4">
+                <span className="text-l font-bold text-gray-900">Options</span>
+                {options.map((option) => {
+                  return (
+                    <p className="text-sm text-gray-700 dark:text-gray-400 flex justify-center">
+                      {option}
+                    </p>
+                  );
+                })}
+              </div>
+              <div className="flex flex-col items-center mt-4">
+                <span className="text-l font-bold text-gray-900">Specs</span>
+                {specs.map((option) => {
+                  return (
+                    <p className="text-sm text-gray-700 dark:text-gray-400 flex justify-center">
+                      {option}
+                    </p>
+                  );
+                })}
+              </div> */}
+            </div>
+          </div>
         </div>
         <div className="col-span-2 mt-6 md:mt-0">
           <div className="flex items-start mb-5">
