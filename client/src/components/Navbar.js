@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Navbar, Dropdown, Avatar } from "flowbite-react";
+import { Navbar, Dropdown, Avatar, Button } from "flowbite-react";
 
 function NavBar({
   currentUser,
@@ -75,25 +75,9 @@ function NavBar({
           </div>
         ) : (
           <div className="flex md:order-2">
-            <Dropdown
-              arrowIcon={false}
-              inline={true}
-              label={
-                <Avatar
-                  alt="User settings"
-                  img="https://www.nicepng.com/png/detail/933-9332131_profile-picture-default-png.png"
-                  rounded={true}
-                />
-              }
-            >
-              <Dropdown.Header>
-                <span className="block text-sm">Welcome</span>
-                <span className="block truncate text-sm font-medium">
-                  Please Sign In
-                </span>
-              </Dropdown.Header>
-              <Dropdown.Item onClick={toSignIn}>Sign In</Dropdown.Item>
-            </Dropdown>
+            <Button className="font-semibold" href="/signin">
+              Sign In
+            </Button>
             <Navbar.Toggle />
           </div>
         )}

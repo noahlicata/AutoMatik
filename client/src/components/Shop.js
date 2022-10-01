@@ -137,7 +137,7 @@ function Shop({
           <div className="flex justify-center">
             <aside className="w-64 mr-10" aria-label="Sidebar">
               <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
-                <a href="/" className="flex items-center pl-2.5 mb-2">
+                <a href="/" className="flex items-center mb-2">
                   <img
                     src="https://cdns.iconmonstr.com/wp-content/releases/preview/2016/240/iconmonstr-car-3.png"
                     className="mr-3 h-6 sm:h-7"
@@ -148,32 +148,9 @@ function Shop({
                   </span>
                 </a>
                 <ul className="space-y-2">
-                  {!loggedIn ? (
-                    <li>
-                      <a className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
-                        <span className="ml-3">
-                          Welcome! Use the search bar and filters to narrow down
-                          your selection. If you find something you like,
-                          remember to save it to your favorites!
-                        </span>
-                      </a>
-                    </li>
-                  ) : (
-                    <li>
-                      <a className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
-                        <span className="ml-3">
-                          Welcome back {currentUser.email}! Use the search bar
-                          and filters to narrow down your selection. If you find
-                          something you like, remember to save it to your
-                          favorites!
-                        </span>
-                      </a>
-                    </li>
-                  )}
-
                   {/* check boxes */}
 
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center my-4">
                     <input
                       name="year"
                       onClick={(e) =>
@@ -216,7 +193,7 @@ function Shop({
                     </label>
                   </div>
 
-                  <div>
+                  <div className="py-4">
                     <div className="dropdown inline-block relative">
                       <button className="bg-gray-300 text-gray-700 font-semibold py-2 pl-4 pr-10 rounded inline-flex items-center text-sm">
                         <span className="mr-1">Sort by:</span>
@@ -303,7 +280,57 @@ function Shop({
                     </div>
                   </div>
 
-                  <p className="text-sm pt-1">{displayedCars.length} Results</p>
+                  <p className="text-sm font-bold">
+                    {displayedCars.length} Results
+                  </p>
+                  {!loggedIn ? (
+                    <li>
+                      <a className="mt-4 flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                        <span>
+                          Welcome! Use the search bar and filters to narrow down
+                          your selection. If you find something you like,
+                          remember to save it to your favorites!
+                        </span>
+                      </a>
+                      <br></br>
+                      <a className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                        <span>
+                          Have questions? Feel free to{" "}
+                          <a
+                            href="/contact"
+                            className="text-blue-700 hover:underline"
+                          >
+                            contact
+                          </a>{" "}
+                          us!
+                        </span>
+                      </a>
+                    </li>
+                  ) : (
+                    <li>
+                      <a className="mt-4 flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                        <span>
+                          Welcome back {currentUser.email}! Use the search bar
+                          and filters to narrow down your selection. If you find
+                          something you like, remember to save it to your
+                          favorites!
+                        </span>
+                      </a>
+                      <br></br>
+                      <a className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                        <span>
+                          Have questions? Feel free to{" "}
+                          <a
+                            href="/contact"
+                            className="text-blue-700 hover:underline"
+                          >
+                            contact
+                          </a>{" "}
+                          us!
+                        </span>
+                      </a>
+                    </li>
+                  )}
                   {loggedIn ? null : (
                     <li>
                       <a

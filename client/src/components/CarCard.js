@@ -146,7 +146,7 @@ function CarCard({ car }) {
             ) : (
               <span>
                 <Tooltip
-                  content="Car has been previously owned by one or many people. See details for more information on car history."
+                  content="Car has been previously owned by one or many people. See seller comments for more information on car history."
                   style="dark"
                 >
                   <button className="font-normal hover:underline text-xs text-orange-700 dark:text-orange-400">
