@@ -343,45 +343,6 @@ function Profile({ currentUser, setCurrentUser }) {
                 </div>
               </div>
             </div>
-            <div className="pb-4 border-b border-gray-300 dark:border-gray-700 px-8">
-              <div className="flex items-center text-gray-800 dark:text-gray-100">
-                <p className="text-sm font-bold text-gray-800 dark:text-gray-100">
-                  Saved Searches
-                </p>
-              </div>
-            </div>
-            <div className="px-8">
-              <div className="flex justify-between items-center mb-8 mt-4">
-                <div className="w-9/12">
-                  <p className="text-sm text-gray-800 dark:text-gray-100 pb-1">
-                    Search 1
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Stuff about Search 1
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-8">
-                <div className="w-9/12">
-                  <p className="text-sm text-gray-800 dark:text-gray-100 pb-1">
-                    Search 2
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Stuff about Search 2
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-8">
-                <div className="w-9/12">
-                  <p className="text-sm text-gray-800 dark:text-gray-100 pb-1">
-                    Search 3
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Stuff about Search 3
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <div className="container mx-auto w-11/12 xl:w-full">
