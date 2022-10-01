@@ -11,17 +11,17 @@ function NavBar({
   setIsDealer,
 }) {
   let history = useHistory();
-
   const toProfile = () => {
     history.push("/profile");
   };
-
   const toHome = () => {
     history.push("/");
   };
-
-  const toSignIn = () => {
-    history.push("/signin");
+  const toShop = () => {
+    history.push("/cars");
+  };
+  const toContact = () => {
+    history.push("/contact");
   };
 
   const handleLogout = () => {
@@ -61,13 +61,14 @@ function NavBar({
               }
             >
               <Dropdown.Header>
-                <span className="block text-sm">Welcome</span>
-                <span className="block truncate text-sm font-medium">
-                  {currentUser.email}
+                <span className="block text-sm font-bold">
+                  Welcome {currentUser.email}!
                 </span>
               </Dropdown.Header>
               <Dropdown.Item onClick={toHome}>Home</Dropdown.Item>
-              <Dropdown.Item onClick={toProfile}>Settings</Dropdown.Item>
+              <Dropdown.Item onClick={toProfile}>My Profile</Dropdown.Item>
+              <Dropdown.Item onClick={toShop}>Shop</Dropdown.Item>
+              <Dropdown.Item onClick={toContact}>Contact</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item onClick={handleLogout}>Sign out</Dropdown.Item>
             </Dropdown>
