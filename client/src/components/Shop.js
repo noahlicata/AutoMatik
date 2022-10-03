@@ -63,29 +63,27 @@ function Shop({
     setIsLoading(false);
   }
 
-  // test
+  function onSortDescAlt(e, order, setOrder) {
+    setIsLoading(true);
+    e.preventDefault();
+    const sortedCategory = displayedCars.sort((a, b) => {
+      return b.price - a.price;
+    });
+    setOrder(!order);
+    setCars([...sortedCategory]);
+    setIsLoading(false);
+  }
 
-  // function onSortDescAlt(e, order, setOrder) {
-  //   setIsLoading(true);
-  //   e.preventDefault();
-  //   const sortedCategory = displayedCars.sort((a, b) => {
-  //     return b.price - a.price;
-  //   });
-  //   setOrder(!order);
-  //   setCars([...sortedCategory]);
-  //   setIsLoading(false);
-  // }
-
-  // function onSortAscAlt(e, order, setOrder) {
-  //   setIsLoading(true);
-  //   e.preventDefault();
-  //   const sortedCategory = displayedCars.sort((a, b) => {
-  //     return a.price - b.price;
-  //   });
-  //   setOrder(!order);
-  //   setCars([...sortedCategory]);
-  //   setIsLoading(false);
-  // }
+  function onSortAscAlt(e, order, setOrder) {
+    setIsLoading(true);
+    e.preventDefault();
+    const sortedCategory = displayedCars.sort((a, b) => {
+      return a.price - b.price;
+    });
+    setOrder(!order);
+    setCars([...sortedCategory]);
+    setIsLoading(false);
+  }
 
   return (
     <div>
@@ -206,7 +204,7 @@ function Shop({
                       </button>
                       <ul className="dropdown-menu absolute hidden text-gray-700 pt-1">
                         <li className="">
-                          <a
+                          <p
                             name="year"
                             className="text-xs cursor-pointer rounded-t bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                             onClick={(e) =>
@@ -214,10 +212,10 @@ function Shop({
                             }
                           >
                             Year - Newest
-                          </a>
+                          </p>
                         </li>
                         <li className="">
-                          <a
+                          <p
                             name="year"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                             onClick={(e) =>
@@ -225,29 +223,35 @@ function Shop({
                             }
                           >
                             Year - Oldest
-                          </a>
+                          </p>
                         </li>
 
                         <li className="">
-                          <a
+                          <p
                             name="price"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            onClick={(e) =>
+                              onSortDescAlt(e, yearOrder, setYearOrder)
+                            }
                           >
                             Price - Highest
-                          </a>
+                          </p>
                         </li>
 
                         <li className="">
-                          <a
+                          <p
                             name="price"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                            onClick={(e) =>
+                              onSortAscAlt(e, yearOrder, setYearOrder)
+                            }
                           >
                             Price - Lowest
-                          </a>
+                          </p>
                         </li>
 
                         <li className="">
-                          <a
+                          <p
                             name="miles"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                             onClick={(e) =>
@@ -255,11 +259,11 @@ function Shop({
                             }
                           >
                             Miles - Highest
-                          </a>
+                          </p>
                         </li>
 
                         <li className="">
-                          <a
+                          <p
                             name="miles"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
                             onClick={(e) =>
@@ -267,7 +271,7 @@ function Shop({
                             }
                           >
                             Miles - Lowest
-                          </a>
+                          </p>
                         </li>
                       </ul>
                     </div>
