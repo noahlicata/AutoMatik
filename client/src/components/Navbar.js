@@ -29,7 +29,7 @@ function NavBar({
       if (res.ok) {
         setCurrentUser(null);
         setLoggedIn(false);
-        history.push("./");
+        history.push("/");
       }
     });
   };

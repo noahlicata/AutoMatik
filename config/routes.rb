@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/dashboard/:id", to: "cars#show"
   get "/limit", to: "cars#limit"
   delete "/remove/:id", to: "cars#destroy"
+  
 
   get "*path",
       to: "fallback#index",

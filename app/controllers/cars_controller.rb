@@ -14,7 +14,7 @@ class CarsController < ApplicationController
   end
 
   def create
-    car = Car.create(car_params)
+    car = Car.create!(car_params)
     render json: car, status: :created
   end
 
@@ -33,6 +33,6 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.permit(:vin, :make, :model, :version, :color, :transmission, :drive_type, :fuel_type, :engine_size, :year, :image, :milage, :standard_specs, :car_options, :price)
+    params.permit(:vin, :make, :model, :version, :color, :transmission, :drive_type, :fuel_type, :engine_size, :year, :image, :milage, :standard_specs, :car_options, :price, :dealer_id)
   end
 end

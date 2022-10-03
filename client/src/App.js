@@ -52,6 +52,10 @@ function App() {
       });
   }, []);
 
+  function handleAddCar(newCar) {
+    setCars([newCar, ...cars]);
+  }
+
   function handleFavorites(clickedCar) {
     const favCarIndex = favCars.findIndex((car) => car.id === clickedCar.id);
     if (favCarIndex < 0) {
@@ -67,7 +71,9 @@ function App() {
         .then(setFavCars([...favCars, clickedCar]));
       console.log(favCars);
     } else {
-      alert(clickedCar.model + " has already been saved!");
+      alert(
+        `${clickedCar.make} ${clickedCar.model} ${clickedCar.version} has already been saved!`
+      );
     }
   }
 
@@ -156,7 +162,7 @@ function App() {
               <DashDetails />
             </Route>
             <Route exact path="/newvehicle">
-              <NewVehicle />
+              <NewVehicle onAddCar={handleAddCar} />
             </Route>
           </Switch>
           <Footer />
