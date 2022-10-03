@@ -34,21 +34,19 @@ function CarCard({ car }) {
           <div className="ml-auto"></div>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {car.year} {car.make} {car.model} {car.version}{" "}
-            {randomState === 1 ? (
-              <span className="text-yellow-700 dark:text-gray-400">
-                ${car.price.toLocaleString()}
-              </span>
-            ) : (
-              <span className="text-green-500">
-                ${car.price.toLocaleString()}
-              </span>
-            )}
+            <p className="text-green-500 text-base">
+              ${car.price.toLocaleString()}
+            </p>
             <p className="mb-2 mt-4 text-xs font-bold text-gray-500 dark:text-gray-400">
               {car.milage.toLocaleString()} miles
             </p>
           </h5>
           <p className=" font-normal text-sm text-gray-700 dark:text-gray-400">
-            <span className="font-bold">Random Dealer</span>{" "}
+            {randomState === 1 ? (
+              <span className="font-bold">AutoMatik Flatiron </span>
+            ) : (
+              <span className="font-bold">Enterprise Car Sales </span>
+            )}
             {`(${m.toLocaleString()} miles away)`}
           </p>
           <p className="mb-2 font-normal text-sm text-gray-700 dark:text-gray-400">

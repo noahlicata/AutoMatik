@@ -61,6 +61,7 @@ const Details = () => {
               <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
                 Miles: {carDetails.milage}
               </div>
+              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400"></div>
               <div>
                 {randomState === 1 ? (
                   <p className="bg-green-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
@@ -202,26 +203,6 @@ const Details = () => {
                   {carDetails.engine_size}
                 </div>
               </div>
-              {/* <div className="flex flex-col items-center mt-4">
-                <span className="text-l font-bold text-gray-900">Options</span>
-                {options.map((option) => {
-                  return (
-                    <p className="text-sm text-gray-700 dark:text-gray-400 flex justify-center">
-                      {option}
-                    </p>
-                  );
-                })}
-              </div>
-              <div className="flex flex-col items-center mt-4">
-                <span className="text-l font-bold text-gray-900">Specs</span>
-                {specs.map((option) => {
-                  return (
-                    <p className="text-sm text-gray-700 dark:text-gray-400 flex justify-center">
-                      {option}
-                    </p>
-                  );
-                })}
-              </div> */}
             </div>
           </div>
 
@@ -253,26 +234,6 @@ const Details = () => {
                   </p>
                 </div>
               </div>
-              {/* <div className="flex flex-col items-center mt-4">
-                <span className="text-l font-bold text-gray-900">Options</span>
-                {options.map((option) => {
-                  return (
-                    <p className="text-sm text-gray-700 dark:text-gray-400 flex justify-center">
-                      {option}
-                    </p>
-                  );
-                })}
-              </div>
-              <div className="flex flex-col items-center mt-4">
-                <span className="text-l font-bold text-gray-900">Specs</span>
-                {specs.map((option) => {
-                  return (
-                    <p className="text-sm text-gray-700 dark:text-gray-400 flex justify-center">
-                      {option}
-                    </p>
-                  );
-                })}
-              </div> */}
             </div>
           </div>
         </div>
@@ -290,7 +251,7 @@ const Details = () => {
               <h4 className="text-xl font-bold text-gray-900 dark:text-white">
                 Seller Comments:
               </h4>
-              <p>
+              <p className="pb-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -299,6 +260,18 @@ const Details = () => {
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
+              <button
+                class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                type="button"
+              >
+                <i class="fas fa-heart"></i>SAVE
+              </button>
+              <button
+                class="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                type="button"
+              >
+                <i class="fas fa-heart"></i>SHARE
+              </button>
             </div>
           </div>
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">

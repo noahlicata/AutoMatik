@@ -44,7 +44,7 @@ function DealerLogin({ setCurrentUser, setLoggedIn }) {
       <div class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
         <div class="px-4 text-white bg-orange-500 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
           <div>
-            <a class="text-4xl font-bold tracking-wider text-center" href="#">
+            <a class="text-4xl font-bold tracking-wider text-center" href="/">
               AutoMatik
             </a>
             <div className="text-center">For Dealers</div>
@@ -57,7 +57,7 @@ function DealerLogin({ setCurrentUser, setLoggedIn }) {
           </p>
           <p class="flex flex-col items-center justify-center mt-10 text-center">
             <span>What are my</span>
-            <a href="#" class="underline">
+            <a href="/" class="underline">
               Dealership Credentials?
             </a>
           </p>
@@ -142,7 +142,7 @@ function DealerLogin({ setCurrentUser, setLoggedIn }) {
               </span>
               <div class="flex flex-col space-y-4">
                 <a
-                  href="#"
+                  href="/"
                   class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-gray-800 rounded-md group hover:bg-gray-800 focus:outline-none"
                 >
                   <span></span>
