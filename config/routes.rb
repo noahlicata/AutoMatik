@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/logged_in", to: "sessions#logged_in"
   get "/dashboard/:id", to: "cars#show"
-  get "/limit", to: "cars#limit"
   delete "/remove/:id", to: "cars#destroy"
   
 

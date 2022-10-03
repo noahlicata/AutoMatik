@@ -22,42 +22,41 @@ function CarCard({ car, onFavoriteCar }) {
 
   return (
     <div className="mb-4">
-      <Link
-        to={`/cars/${car.id}`}
+      <div
         className="flex flex-col items-center w-full bg-white rounded-lg border
  md:flex-row hover:bg-gray-100 dark:border-gray-700
       dark:bg-gray-800 dark:hover:bg-gray-700"
       >
-        <img
-          className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
-          src={car.image}
-          alt=""
-        />
-
+        <Link to={`/cars/${car.id}`}>
+          <img
+            className="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg"
+            src={car.image}
+            alt=""
+          />
+        </Link>
         <div className="flex flex-col justify-between p-4 leading-normal">
           <div className="ml-auto"></div>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {car.year} {car.make} {car.model} {car.version}{" "}
+          <div>
+            <Link
+              to={`/cars/${car.id}`}
+              className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              {car.year} {car.make} {car.model} {car.version}{" "}
+            </Link>
             <button
-              class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              class="bg-green-500 text-white active:bg-green-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
               type="button"
               onClick={clickedFavorites}
             >
-              <i class="fas fa-heart"></i>SAVE
+              SAVE
             </button>
-            <button
-              class="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-              type="button"
-            >
-              <i class="fas fa-heart"></i>SHARE
-            </button>
-            <p className="text-green-500 text-base">
+            <p className="text-green-500 text-base mb-2 font-bold tracking-tight dark:text-white">
               ${car.price.toLocaleString()}
             </p>
             <p className="mb-2 mt-4 text-xs font-bold text-gray-500 dark:text-gray-400">
               {car.milage.toLocaleString()} miles
             </p>
-          </h5>
+          </div>
           <p className=" font-normal text-sm text-gray-700 dark:text-gray-400">
             {randomState === 1 ? (
               <span className="font-bold">AutoMatik Flatiron </span>
@@ -172,7 +171,7 @@ function CarCard({ car, onFavoriteCar }) {
             )}
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }

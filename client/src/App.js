@@ -31,6 +31,8 @@ function App() {
       .then((res) => res.json())
       .then((cars) => {
         setCars(cars);
+        setFavCars(cars);
+
         setIsLoading(false);
       });
   }, []);
@@ -43,14 +45,6 @@ function App() {
       }
     });
   }, [loggedIn]);
-
-  useEffect(() => {
-    fetch("/limit")
-      .then((res) => res.json())
-      .then((favArr) => {
-        setFavCars(favArr);
-      });
-  }, []);
 
   function handleAddCar(newCar) {
     setCars([newCar, ...cars]);
