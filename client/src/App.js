@@ -15,6 +15,7 @@ import Forgot from "./components/Forgot";
 import DealerLogin from "./components/DealerLogin";
 import DealerDash from "./components/DealerDash";
 import DashDetails from "./components/DashDetails";
+import NewVehicle from "./components/NewVehicle";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -153,6 +154,9 @@ function App() {
             </Route>
             <Route exact path="/dashboard/:id">
               <DashDetails />
+            </Route>
+            <Route exact path="/newvehicle">
+              <NewVehicle />
             </Route>
           </Switch>
           <Footer />

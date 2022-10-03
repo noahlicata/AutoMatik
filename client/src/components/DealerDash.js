@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Button } from "flowbite-react";
+
 import DashCard from "./DashCard";
 import { Table } from "flowbite-react";
 
@@ -29,9 +31,9 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
     return <DashCard key={car.id} car={car} price={price} />;
   });
 
-  const newVehicleForm = () => {
-    console.log("test");
-  };
+  // const newVehicleForm = () => {
+  //   history.push("/newvehicle");
+  // };
 
   return (
     <div>
@@ -52,9 +54,12 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                       <h3 class="text-base font-normal text-gray-500">
                         Sales this week
                       </h3>
-                      <h3 class="text-sm font-normal text-blue-500">
+                      <h3 class="text-sm font-normal text-blue-500 mb-1.5">
                         {displayedCars.length} vehicles listed
                       </h3>
+                      <Button color="success" size="xs" href="/newvehicle">
+                        <a className="mx-auto">Add New Vehicle +</a>
+                      </Button>
                     </div>
                     <div class="flex items-center justify-end flex-1 text-green-500 text-base font-bold">
                       12.5%
@@ -78,12 +83,6 @@ const DealerDash = ({ isDealer, setIsDealer, cars }) => {
                       <Table.HeadCell>Color</Table.HeadCell>
                       <Table.HeadCell>Miles</Table.HeadCell>
                       <Table.HeadCell>Price</Table.HeadCell>
-                      <Table.HeadCell
-                        className="cursor-pointer hover:underline text-green-500"
-                        onClick={newVehicleForm}
-                      >
-                        Add New Vehicle +
-                      </Table.HeadCell>
                       <Table.HeadCell>
                         <span className="sr-only">Edit</span>
                       </Table.HeadCell>
