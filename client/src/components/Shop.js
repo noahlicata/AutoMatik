@@ -9,6 +9,7 @@ function Shop({
   setCars,
   isLoading,
   setIsLoading,
+  onFavoriteCar,
 }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [yearOrder, setYearOrder] = useState(true);
@@ -30,7 +31,14 @@ function Shop({
   });
 
   const carsObj = displayedCars.map((car) => {
-    return <CarCard key={car.id} car={car} price={price} />;
+    return (
+      <CarCard
+        key={car.id}
+        car={car}
+        price={price}
+        onFavoriteCar={onFavoriteCar}
+      />
+    );
   });
 
   function onSortDesc(e, attr, order, setOrder) {
@@ -57,27 +65,27 @@ function Shop({
 
   // test
 
-  function onSortDescAlt(e, order, setOrder) {
-    setIsLoading(true);
-    e.preventDefault();
-    const sortedCategory = displayedCars.sort((a, b) => {
-      return b.price - a.price;
-    });
-    setOrder(!order);
-    setCars([...sortedCategory]);
-    setIsLoading(false);
-  }
+  // function onSortDescAlt(e, order, setOrder) {
+  //   setIsLoading(true);
+  //   e.preventDefault();
+  //   const sortedCategory = displayedCars.sort((a, b) => {
+  //     return b.price - a.price;
+  //   });
+  //   setOrder(!order);
+  //   setCars([...sortedCategory]);
+  //   setIsLoading(false);
+  // }
 
-  function onSortAscAlt(e, order, setOrder) {
-    setIsLoading(true);
-    e.preventDefault();
-    const sortedCategory = displayedCars.sort((a, b) => {
-      return a.price - b.price;
-    });
-    setOrder(!order);
-    setCars([...sortedCategory]);
-    setIsLoading(false);
-  }
+  // function onSortAscAlt(e, order, setOrder) {
+  //   setIsLoading(true);
+  //   e.preventDefault();
+  //   const sortedCategory = displayedCars.sort((a, b) => {
+  //     return a.price - b.price;
+  //   });
+  //   setOrder(!order);
+  //   setCars([...sortedCategory]);
+  //   setIsLoading(false);
+  // }
 
   return (
     <div>
@@ -153,15 +161,6 @@ function Shop({
                   <div className="flex items-center my-4">
                     <input
                       name="year"
-                      onClick={(e) =>
-                        onSortAscAlt(
-                          e,
-                          "year",
-                          "milage",
-                          yearOrder,
-                          setYearOrder
-                        )
-                      }
                       id="default-checkbox"
                       type="checkbox"
                       value=""
@@ -233,9 +232,6 @@ function Shop({
                           <a
                             name="price"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                            onClick={(e) =>
-                              onSortDescAlt(e, yearOrder, setYearOrder)
-                            }
                           >
                             Price - Highest
                           </a>
@@ -245,9 +241,6 @@ function Shop({
                           <a
                             name="price"
                             className="text-xs cursor-pointer bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
-                            onClick={(e) =>
-                              onSortAscAlt(e, yearOrder, setYearOrder)
-                            }
                           >
                             Price - Lowest
                           </a>

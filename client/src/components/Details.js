@@ -27,6 +27,10 @@ const Details = () => {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
+  // function clickedFavorites() {
+  //   onFavoriteCar(car);
+  // }
+
   useEffect(() => {
     fetch(`/cars/${id}`)
       .then((res) => res.json())
@@ -35,9 +39,6 @@ const Details = () => {
         setRandomState(Math.floor(Math.random() * 2));
       });
   }, []);
-
-  let options = carDetails.car_options;
-  let specs = carDetails.standard_specs;
 
   let m = getRandomInt(1500, 0);
 
@@ -260,9 +261,10 @@ const Details = () => {
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
-              <button
+              {/* <button
                 class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                 type="button"
+                onClick={clickedFavorites}
               >
                 <i class="fas fa-heart"></i>SAVE
               </button>
@@ -271,7 +273,7 @@ const Details = () => {
                 type="button"
               >
                 <i class="fas fa-heart"></i>SHARE
-              </button>
+              </button> */}
             </div>
           </div>
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">

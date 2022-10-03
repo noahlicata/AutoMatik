@@ -1,6 +1,24 @@
 import React, { useState } from "react";
+import FavCard from "./FavCard";
 
-function Profile({ currentUser, setCurrentUser }) {
+function Profile({
+  currentUser,
+  setCurrentUser,
+  cars,
+  onRemoveFavCar,
+  onFavCar,
+}) {
+  const displayedFavs = cars.map((car) => {
+    return (
+      <FavCard
+        car={car}
+        key={car.id}
+        onRemoveFavCar={onRemoveFavCar}
+        onFavCar={onFavCar}
+      />
+    );
+  });
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -311,38 +329,7 @@ function Profile({ currentUser, setCurrentUser }) {
                 Saved Vehicles
               </p>
             </div>
-            <div className="px-8">
-              <div className="flex justify-between items-center mb-8 mt-4">
-                <div className="w-9/12">
-                  <p className="text-sm text-gray-800 dark:text-gray-100 pb-1">
-                    Vehicle 1
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Stuff about Vehicle 1
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-8">
-                <div className="w-9/12">
-                  <p className="text-sm text-gray-800 dark:text-gray-100 pb-1">
-                    Vehicle 2
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Stuff about Vehicle 2
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-8">
-                <div className="w-9/12">
-                  <p className="text-sm text-gray-800 dark:text-gray-100 pb-1">
-                    Vehicle 3
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Stuff about Vehicle 3
-                  </p>
-                </div>
-              </div>
-            </div>
+            <div className="px-8">{displayedFavs}</div>
           </div>
         </div>
         <div className="container mx-auto w-11/12 xl:w-full">

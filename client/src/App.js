@@ -20,6 +20,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [cars, setCars] = useState([]);
+  const [favCars, setFavCars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isDealer, setIsDealer] = useState(false);
 
@@ -41,6 +42,41 @@ function App() {
       }
     });
   }, [loggedIn]);
+
+  useEffect(() => {
+    fetch("/limit")
+      .then((res) => res.json())
+      .then((favArr) => {
+        setFavCars(favArr);
+      });
+  }, []);
+
+  function handleFavorites(clickedCar) {
+    const favCarIndex = favCars.findIndex((car) => car.id === clickedCar.id);
+    if (favCarIndex < 0) {
+      fetch("/favorites", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ ...clickedCar, favorite: true }),
+      })
+        .then((r) => r.json())
+        .then(setFavCars([...favCars, clickedCar]));
+      console.log(favCars);
+    } else {
+      alert(clickedCar.model + " has already been saved!");
+    }
+  }
+
+  function handleRemoveFavorite(removeCar) {
+    fetch(`/remove/${removeCar.id}`, {
+      method: "DELETE",
+    })
+      .then((r) => r.json())
+      .then(setFavCars(favCars.filter((car) => car.id !== removeCar.id)));
+  }
 
   return (
     <div>
@@ -74,6 +110,9 @@ function App() {
               <Profile
                 currentUser={currentUser}
                 setCurrentUser={setCurrentUser}
+                cars={favCars}
+                onRemoveFavCar={handleRemoveFavorite}
+                onFavCar={handleFavorites}
               />
             </Route>
             <Route exact path="/cars">
@@ -84,6 +123,7 @@ function App() {
                 setCars={setCars}
                 isLoading={isLoading}
                 setIsLoading={setIsLoading}
+                onFavoriteCar={handleFavorites}
               />
             </Route>
             <Route exact path="/sell">

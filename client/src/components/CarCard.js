@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Tooltip, Button } from "flowbite-react";
 
-function CarCard({ car }) {
+function CarCard({ car, onFavoriteCar }) {
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -15,6 +15,10 @@ function CarCard({ car }) {
   let p = getRandomInt(1, 2);
 
   const [randomState, setRandomState] = useState(Math.floor(Math.random() * 2));
+
+  function clickedFavorites() {
+    onFavoriteCar(car);
+  }
 
   return (
     <div className="mb-4">
@@ -34,6 +38,19 @@ function CarCard({ car }) {
           <div className="ml-auto"></div>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {car.year} {car.make} {car.model} {car.version}{" "}
+            <button
+              class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              type="button"
+              onClick={clickedFavorites}
+            >
+              <i class="fas fa-heart"></i>SAVE
+            </button>
+            <button
+              class="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+              type="button"
+            >
+              <i class="fas fa-heart"></i>SHARE
+            </button>
             <p className="text-green-500 text-base">
               ${car.price.toLocaleString()}
             </p>
