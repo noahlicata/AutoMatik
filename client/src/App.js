@@ -21,7 +21,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [cars, setCars] = useState([]);
-  const [favCars, setFavCars] = useState([]);
+  const [favCars, setFavCars] = useState([
+    {
+      car: {},
+    },
+  ]);
   const [isLoading, setIsLoading] = useState(false);
   const [isDealer, setIsDealer] = useState(false);
 
@@ -31,11 +35,21 @@ function App() {
       .then((res) => res.json())
       .then((cars) => {
         setCars(cars);
-        setFavCars(cars);
-
         setIsLoading(false);
       });
   }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch(`/get_user_cars?user_id=${currentUser.id}`)
+      .then((res) => res.json())
+      .then((favs) => {
+        setFavCars(favs);
+        setIsLoading(false);
+      });
+  }, [currentUser]);
+
+  console.log(favCars);
 
   useEffect(() => {
     fetch(`/logged_in`).then((res) => {
@@ -53,17 +67,16 @@ function App() {
   function handleFavorites(clickedCar) {
     const favCarIndex = favCars.findIndex((car) => car.id === clickedCar.id);
     if (favCarIndex < 0) {
-      fetch("/favorites", {
+      fetch("/user_cars", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({ ...clickedCar, favorite: true }),
+        body: JSON.stringify({ ...clickedCar }),
       })
         .then((r) => r.json())
         .then(setFavCars([...favCars, clickedCar]));
-      console.log(favCars);
     } else {
       alert(
         `${clickedCar.make} ${clickedCar.model} ${clickedCar.version} has already been saved!`
@@ -71,12 +84,12 @@ function App() {
     }
   }
 
-  function handleRemoveFavorite(removeCar) {
-    fetch(`/remove/${removeCar.id}`, {
+  function handleRemoveFavorite(id) {
+    fetch(`/user_cars/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
-      .then(setFavCars(favCars.filter((car) => car.id !== removeCar.id)));
+      .then(setFavCars(favCars.filter((car) => car.id !== id)));
   }
 
   return (
@@ -107,15 +120,17 @@ function App() {
                 setLoggedIn={setLoggedIn}
               />
             </Route>
-            <Route exact path="/profile">
-              <Profile
-                currentUser={currentUser}
-                setCurrentUser={setCurrentUser}
-                cars={favCars}
-                onRemoveFavCar={handleRemoveFavorite}
-                onFavCar={handleFavorites}
-              />
-            </Route>
+            {favCars && (
+              <Route exact path="/profile">
+                <Profile
+                  currentUser={currentUser}
+                  setCurrentUser={setCurrentUser}
+                  favCars={favCars}
+                  onRemoveFavCar={handleRemoveFavorite}
+                  onFavCar={handleFavorites}
+                />
+              </Route>
+            )}
             <Route exact path="/cars">
               <Shop
                 cars={cars}
@@ -147,9 +162,9 @@ function App() {
             </Route>
             <Route exact path="/dashboard">
               <DealerDash
-                isDealer={isDealer}
-                setIsDealer={setIsDealer}
                 cars={cars}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
               />
             </Route>
             <Route exact path="/dashboard/:id">

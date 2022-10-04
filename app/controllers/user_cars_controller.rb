@@ -8,6 +8,12 @@ class UserCarsController < ApplicationController
     render json: @user_cars
   end
 
+def get_user_cars
+ user_cars = UserCar.where("user_id=?", params[:user_id])
+ render json: user_cars
+end
+
+
   # GET /user_cars/1
   def show
     render json: @user_car

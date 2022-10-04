@@ -1,14 +1,21 @@
 import React from "react";
 
-const FavCard = ({ car, onRemoveFavCar }) => {
-  function clickedRemove() {
-    onRemoveFavCar(car);
+const FavCard = ({ favCar, onRemoveFavCar }) => {
+  if (!favCar) {
+    return <div>Loading...</div>;
   }
+
+  const { id, year, make, model, version, image } = favCar;
+
+  function clickedRemove() {
+    onRemoveFavCar(id);
+  }
+
   return (
     <div className="p-4 flex justify-between items-center mb-8 mt-4 border border-gray-300 rounded-lg">
       <div className="w-9/12">
         <p className="text-sm text-gray-800 dark:text-gray-100 pb-1">
-          {car.year} {car.make} {car.model} {car.version}{" "}
+          {year} {make} {model} {version}{" "}
           <button
             onClick={clickedRemove}
             type="button"
@@ -19,12 +26,12 @@ const FavCard = ({ car, onRemoveFavCar }) => {
         </p>
         <img
           className="w-20 h-20 border-2 border-gray-900 rounded-lg"
-          src={car.image}
+          src={image}
           alt="oops"
         />
-        <p className="text-sm text-gray-500 dark:text-gray-400">
-          {car.color} | {car.milage} miles
-        </p>
+        {/* <p className="text-sm text-gray-500 dark:text-gray-400">
+          {color} | {milage} miles
+        </p> */}
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const DashCard = ({ car, price }) => {
           to={`/dashboard/${car.id}`}
           className="font-medium text-cyan-600 hover:underline dark:text-cyan-500"
         >
-          Edit
+          View
         </Link>
       </Table.Cell>
     </Table.Row>

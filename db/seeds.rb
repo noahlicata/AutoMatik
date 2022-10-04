@@ -6,7 +6,7 @@ Dealer.create(
   brand: "Things",
 )
 
-672.times do
+1000.times do
   make = Faker::Vehicle.make
   Car.create(
     image: "https://loremflickr.com/300/300/vehicle/all?random=#{rand(1..200)}",
@@ -28,3 +28,31 @@ Dealer.create(
 
   )
 end
+
+
+  User.create(email: "testuser1@gmail.com", password: "asd123")
+  User.create(email: "testuser2@gmail.com", password: "asd123")
+  User.create(email: "testuser3@gmail.com", password: "asd123")
+  User.create(email: "testuser4@gmail.com", password: "asd123")
+  User.create(email: "testuser5@gmail.com", password: "asd123")
+
+  UserCar.create(user_id: 1, car_id: 1)
+  UserCar.create(user_id: 1, car_id: 2)
+  UserCar.create(user_id: 1, car_id: 3)
+  UserCar.create(user_id: 1, car_id: 4)
+  UserCar.create(user_id: 1, car_id: 5)
+
+  UserCar.create(user_id: 3, car_id: 1)
+  UserCar.create(user_id: 3, car_id: 2)
+  UserCar.create(user_id: 3, car_id: 5)
+  UserCar.create(user_id: 3, car_id: 6)
+  UserCar.create(user_id: 3, car_id: 7)
+
+  UserCar.create(user_id: 2, car_id: 7)
+  UserCar.create(user_id: 2, car_id: 8)
+  UserCar.create(user_id: 2, car_id: 3)
+  UserCar.create(user_id: 2, car_id: 4)
+  UserCar.create(user_id: 2, car_id: 5)
+
+  puts 'db seeded'
+

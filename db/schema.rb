@@ -57,4 +57,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_29_011801) do
     t.datetime "updated_at", null: false
     t.string "image"
   end
+
 end
