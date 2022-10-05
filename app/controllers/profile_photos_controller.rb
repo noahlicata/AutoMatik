@@ -23,7 +23,7 @@
             if photos.exists?
                 render json: photos.last, status: :ok
             else
-                render json: {image_url: "https://i0.wp.com/researchictafrica.net/wp/wp-content/uploads/2016/10/default-profile-pic.jpg?ssl=1"}
+                render json: {image_url: "https://freesvg.org/img/abstract-user-flat-4.png"}
             end
         end
         

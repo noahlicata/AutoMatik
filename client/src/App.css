@@ -1,3 +1,13 @@
 .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+  display: block;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+#custom-upload {
+  display: inline-block;
+
+  cursor: pointer;
+}
