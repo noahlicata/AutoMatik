@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import FavCard from "./FavCard";
-import { Tooltip } from "flowbite-react";
 
 function Profile({
   currentUser,
@@ -83,7 +82,7 @@ function Profile({
                   <div className="ml-2 text-gray-100"></div>
                 </div>
 
-                <div className="cursor-pointer w-20 h-20 rounded-full absolute bottom-0 -mb-10 ml-12 flex items-center justify-center">
+                <div className="w-20 h-20 rounded-full absolute bottom-0 -mb-10 ml-12 flex items-center justify-center">
                   <img
                     src={profPhoto.image_url}
                     alt="something"
@@ -95,19 +94,13 @@ function Profile({
             </div>
           </div>
         </div>
-
-        {/* <Tooltip
-          className="fixed top-0"
-          content='To change your profile picture, click the image, select your new picture from your files, and then click "Upload Picture".'
-        ></Tooltip> */}
-
         <div className="container mx-auto bg-white dark:bg-gray-800 mt-10 rounded px-4">
           <div className="mx-auto pt-4">
             <div className="container mx-auto">
               <form onSubmit={handleImage}>
                 <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
                   <label
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                    class="block mb-2 text-sm font-bold text-gray-900 dark:text-gray-300"
                     htmlFor="image"
                   >
                     Profile Picture
@@ -132,7 +125,7 @@ function Profile({
 
                   <div>
                     <button
-                      className="bg-blue-700 focus:outline-none transition duration-150 ease-in-out hover:bg-blue-600 rounded-lg text-white px-8 py-2 mt-2 text-sm"
+                      className="bg-green-700 focus:outline-none transition duration-150 ease-in-out hover:bg-green-600 rounded-lg text-white px-8 py-2 mt-2 text-sm"
                       type="submit"
                     >
                       Upload
@@ -176,7 +169,7 @@ function Profile({
                   />
                 </div>
                 <div className="container mx-auto w-11/12 xl:w-full">
-                  <div className="w-full py-4 sm:px-0 bg-white dark:bg-gray-800 flex">
+                  <div className="w-full sm:px-0 bg-white dark:bg-gray-800 flex">
                     <button
                       className="bg-blue-700 focus:outline-none transition duration-150 ease-in-out hover:bg-blue-600 rounded-lg text-white px-8 py-2 text-sm"
                       type="submit"
