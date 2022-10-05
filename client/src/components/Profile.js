@@ -82,51 +82,60 @@ function Profile({
                 <div className="flex items-center px-3 py-2 rounded absolute right-0 mr-4 mt-4 cursor-pointer">
                   <div className="ml-2 text-gray-100"></div>
                 </div>
-                <Tooltip
-                  className="fixed top-0"
-                  content='To change your profile picture, click the image, select your new picture from your files, and then click "Upload Picture".'
-                >
-                  <div className="cursor-pointer w-20 h-20 rounded-full absolute bottom-0 -mb-10 ml-12 flex items-center justify-center">
-                    <label htmlFor="image">
-                      <img
-                        src={profPhoto.image_url}
-                        alt="something"
-                        className="absolute z-0 h-full w-full object-cover rounded-full top-0 left-0 bottom-0 right-0"
-                        id="custom-upload"
-                      />
-                    </label>
-                  </div>
-                </Tooltip>
+
+                <div className="cursor-pointer w-20 h-20 rounded-full absolute bottom-0 -mb-10 ml-12 flex items-center justify-center">
+                  <img
+                    src={profPhoto.image_url}
+                    alt="something"
+                    className="absolute z-0 h-full w-full object-cover rounded-full top-0 left-0 bottom-0 right-0"
+                    id="custom-upload"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        {/* <Tooltip
+          className="fixed top-0"
+          content='To change your profile picture, click the image, select your new picture from your files, and then click "Upload Picture".'
+        ></Tooltip> */}
 
         <div className="container mx-auto bg-white dark:bg-gray-800 mt-10 rounded px-4">
           <div className="mx-auto pt-4">
             <div className="container mx-auto">
               <form onSubmit={handleImage}>
                 <div className="xl:w-1/4 lg:w-1/2 md:w-1/2 flex flex-col mb-6">
-                  {/* <label
+                  <label
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     htmlFor="image"
-                    className="pb-2 text-sm font-bold text-gray-800 dark:text-gray-100"
-                    id="custom-upload"
                   >
                     Profile Picture
-                  </label> */}
+                  </label>
                   <input
                     onChange={(e) => setImageData(e.target.files[0])}
                     type="file"
                     name="image"
                     id="image"
                     placeholder="image"
+                    class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    aria-describedby="user_avatar_help"
                   />
+                  <div
+                    class="mt-1 text-sm text-gray-500 dark:text-gray-300"
+                    id="user_avatar_help"
+                  >
+                    Click "Choose File" to select a new profile picture from
+                    your computer. Once selected, click the upload button to
+                    confirm changes.
+                  </div>
+
                   <div>
                     <button
                       className="bg-blue-700 focus:outline-none transition duration-150 ease-in-out hover:bg-blue-600 rounded-lg text-white px-8 py-2 mt-2 text-sm"
                       type="submit"
                     >
-                      ✅
+                      Upload
                     </button>
                   </div>
                 </div>
