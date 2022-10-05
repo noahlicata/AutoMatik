@@ -21,13 +21,8 @@ end
 
   # POST /user_cars
   def create
-    @user_car = UserCar.new(user_car_params)
-
-    if @user_car.save
-      render json: @user_car, status: :created, location: @user_car
-    else
-      render json: @user_car.errors, status: :unprocessable_entity
-    end
+    user_car = UserCar.create!(user_car_params)
+    render json: user_car, status: :created
   end
 
   # PATCH/PUT /user_cars/1

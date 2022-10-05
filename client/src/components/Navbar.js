@@ -9,6 +9,7 @@ function NavBar({
   setLoggedIn,
   isDealer,
   setIsDealer,
+  profPhoto,
 }) {
   let history = useHistory();
   const toProfile = () => {
@@ -53,11 +54,13 @@ function NavBar({
               arrowIcon={false}
               inline={true}
               label={
-                <Avatar
-                  alt="User settings"
-                  img="https://freesvg.org/img/abstract-user-flat-4.png"
-                  rounded={true}
-                />
+                currentUser ? (
+                  <Avatar
+                    alt="User settings"
+                    img={profPhoto.image_url}
+                    rounded={true}
+                  />
+                ) : null
               }
             >
               <Dropdown.Header>

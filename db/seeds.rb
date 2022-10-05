@@ -6,7 +6,7 @@ Dealer.create(
   brand: "Things",
 )
 
-1000.times do
+50.times do
   make = Faker::Vehicle.make
   Car.create(
     image: "https://loremflickr.com/300/300/vehicle/all?random=#{rand(1..200)}",

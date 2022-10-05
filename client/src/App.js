@@ -21,11 +21,8 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [loggedIn, setLoggedIn] = useState(false);
   const [cars, setCars] = useState([]);
-  const [favCars, setFavCars] = useState([
-    {
-      car: {},
-    },
-  ]);
+  const [profPhoto, setProfPhoto] = useState([]);
+  const [favCars, setFavCars] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isDealer, setIsDealer] = useState(false);
   const [inventory, setInventory] = useState([]);
@@ -60,39 +57,47 @@ function App() {
       });
   }, [currentUser]);
 
-  console.log(favCars);
-
   useEffect(() => {
     fetch(`/logged_in`).then((res) => {
       if (res.ok) {
         setLoggedIn(true);
-        res.json().then((user) => setCurrentUser(user));
+        res.json().then((user) => {
+          setCurrentUser(user);
+          fetchProfPhoto(user.id);
+        });
       }
     });
   }, [loggedIn]);
+
+  function fetchProfPhoto(id) {
+    fetch(`/current_user_photos?id=${id}`)
+      .then((r) => r.json())
+      .then((photosArr) => {
+        setProfPhoto(photosArr);
+      });
+  }
 
   function handleAddCar(newCar) {
     setCars([newCar, ...cars]);
   }
 
-  function handleFavorites(clickedCar) {
-    const favCarIndex = favCars.findIndex((car) => car.id === clickedCar.id);
-    if (favCarIndex < 0) {
-      fetch("/user_cars", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ ...clickedCar }),
-      })
-        .then((r) => r.json())
-        .then(setFavCars([...favCars, clickedCar]));
-    } else {
-      alert(
-        `${clickedCar.make} ${clickedCar.model} ${clickedCar.version} has already been saved!`
-      );
-    }
+  console.log(profPhoto);
+
+  function handleFavorites(id) {
+    console.log(id);
+    // const favCarIndex = favCars.findIndex((car) => car.id === clickedCar.id);
+    fetch("/user_cars", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        user_id: currentUser.id,
+        car_id: id,
+      }),
+    })
+      .then((r) => r.json())
+      .then((data) => setFavCars([...favCars, data]));
   }
 
   function handleRemoveFavorite(id) {
@@ -114,6 +119,7 @@ function App() {
             setLoggedIn={setLoggedIn}
             isDealer={isDealer}
             setIsDealer={setIsDealer}
+            profPhoto={profPhoto}
           />
           <Switch>
             <Route exact path="/">
@@ -131,7 +137,7 @@ function App() {
                 setLoggedIn={setLoggedIn}
               />
             </Route>
-            {favCars && (
+            {currentUser && (
               <Route exact path="/profile">
                 <Profile
                   currentUser={currentUser}
@@ -139,6 +145,8 @@ function App() {
                   favCars={favCars}
                   onRemoveFavCar={handleRemoveFavorite}
                   onFavCar={handleFavorites}
+                  profPhoto={profPhoto}
+                  setProfPhoto={setProfPhoto}
                 />
               </Route>
             )}

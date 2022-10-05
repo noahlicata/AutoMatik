@@ -17,7 +17,7 @@ function CarCard({ car, onFavoriteCar }) {
   const [randomState, setRandomState] = useState(Math.floor(Math.random() * 2));
 
   function clickedFavorites() {
-    onFavoriteCar(car);
+    onFavoriteCar(car.id);
   }
 
   return (
