@@ -46,40 +46,40 @@ const Details = () => {
     <div className="p-4">
       <article className="md:gap-8 md:grid md:grid-cols-3">
         <div>
-          <div className="flex items-center mb-6 space-x-4">
+          <div className="flex w-full mb-6 space-x-4">
             <img
-              className="w-500 h-500 rounded-full"
+              className="w-full max-w-sm rounded-lg"
               src={carDetails.image}
               alt=""
             />
-            <div className="space-y-1 font-medium dark:text-white">
-              <p>
-                {carDetails.year} {carDetails.make} {carDetails.model}
-              </p>
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                {carDetails.version}
-              </div>
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
-                Miles: {carDetails.milage}
-              </div>
-              <div className="flex items-center text-sm text-gray-500 dark:text-gray-400"></div>
-              <div>
-                {randomState === 1 ? (
-                  <p className="bg-green-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
-                    GREAT PRICE
-                  </p>
-                ) : (
-                  <p className="bg-orange-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
-                    AVERAGE PRICE
-                  </p>
-                )}
-              </div>
-            </div>
           </div>
 
           <div className="w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
             <div className="px-5 pb-5">
-              <p className="font-normal text-sm text-gray-700 dark:text-gray-400">
+              <div className="space-y-1 text-l font-bold text-gray-900 dark:text-white">
+                <p>
+                  {carDetails.year} {carDetails.make} {carDetails.model}
+                </p>
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                  {carDetails.version}
+                </div>
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                  Miles: {carDetails.milage}
+                </div>
+                <div className="flex items-center text-sm text-gray-500 dark:text-gray-400"></div>
+                <div>
+                  {randomState === 1 ? (
+                    <p className="bg-green-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
+                      GREAT PRICE
+                    </p>
+                  ) : (
+                    <p className="bg-orange-400 text-white text-sm font-semibold inline-flex items-center p-1.5 rounded">
+                      AVERAGE PRICE
+                    </p>
+                  )}
+                </div>
+              </div>
+              <p className="mt-2 font-normal text-sm text-gray-700 dark:text-gray-400">
                 <span className="font-bold">Random Dealer</span>{" "}
                 {`(${m.toLocaleString()} miles away)`}
               </p>

@@ -55,7 +55,7 @@ function NavBar({
               label={
                 <Avatar
                   alt="User settings"
-                  img="https://dreamvilla.life/wp-content/uploads/2017/07/dummy-profile-pic.png"
+                  img="https://freesvg.org/img/abstract-user-flat-4.png"
                   rounded={true}
                 />
               }

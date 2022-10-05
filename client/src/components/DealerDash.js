@@ -127,7 +127,7 @@ const DealerDash = ({ isLoading, setIsLoading, cars }) => {
                       </div>
                       <div class="flex-shrink-0">
                         <a
-                          href="#"
+                          href="/"
                           class="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg p-2"
                         >
                           View all
@@ -342,7 +342,7 @@ const DealerDash = ({ isLoading, setIsLoading, cars }) => {
                                   class="__cf_email__"
                                   data-cfemail="17727a767e7b57607e7973646372653974787a"
                                 >
-                                  randomemail@email.com
+                                  neils3@gmail.com
                                 </a>
                               </p>
                             </div>
@@ -373,7 +373,7 @@ const DealerDash = ({ isLoading, setIsLoading, cars }) => {
                                   class="__cf_email__"
                                   data-cfemail="d4b1b9b5bdb894a3bdbab0a7a0b1a6fab7bbb9"
                                 >
-                                  randomemail@email.com
+                                  green.bonnie23@gmail.com
                                 </a>
                               </p>
                             </div>
@@ -404,7 +404,7 @@ const DealerDash = ({ isLoading, setIsLoading, cars }) => {
                                   class="__cf_email__"
                                   data-cfemail="57323a363e3b17203e3933242332257934383a"
                                 >
-                                  randomemail@email.com
+                                  goughgetem@gmail.com
                                 </a>
                               </p>
                             </div>
@@ -435,7 +435,7 @@ const DealerDash = ({ isLoading, setIsLoading, cars }) => {
                                   class="__cf_email__"
                                   data-cfemail="284d45494144685f41464c5b5c4d5a064b4745"
                                 >
-                                  randomemail@email.com
+                                  thomas.l@yahoo.com
                                 </a>
                               </p>
                             </div>
@@ -466,7 +466,7 @@ const DealerDash = ({ isLoading, setIsLoading, cars }) => {
                                   class="__cf_email__"
                                   data-cfemail="a2c7cfc3cbcee2d5cbccc6d1d6c7d08cc1cdcf"
                                 >
-                                  randomemail@email.com
+                                  dryblana@gmail.com
                                 </a>
                               </p>
                             </div>
