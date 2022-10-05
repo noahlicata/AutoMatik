@@ -28,6 +28,7 @@ function App() {
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [isDealer, setIsDealer] = useState(false);
+  const [inventory, setInventory] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -35,6 +36,16 @@ function App() {
       .then((res) => res.json())
       .then((cars) => {
         setCars(cars);
+        setIsLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("/inventory")
+      .then((res) => res.json())
+      .then((inventory) => {
+        setInventory(inventory);
         setIsLoading(false);
       });
   }, []);
@@ -162,7 +173,7 @@ function App() {
             </Route>
             <Route exact path="/dashboard">
               <DealerDash
-                cars={cars}
+                inventory={inventory}
                 isLoading={isLoading}
                 setIsLoading={setIsLoading}
               />

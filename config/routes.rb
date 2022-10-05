@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/logged_in", to: "sessions#logged_in"
   get "/dashboard/:id", to: "cars#show"
-  get "/saved", to: "cars#saved"
+  get "/inventory", to: "cars#inventory"
   get "/get_user_cars", to: "user_cars#get_user_cars"
 
   get "*path",

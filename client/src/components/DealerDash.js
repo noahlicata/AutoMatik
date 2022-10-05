@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Spinner, Table } from "flowbite-react";
 import DashCard from "./DashCard";
 
-const DealerDash = ({ isLoading, setIsLoading, cars }) => {
+const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   function getRandomInt(min, max) {
@@ -13,7 +13,7 @@ const DealerDash = ({ isLoading, setIsLoading, cars }) => {
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   let price = getRandomInt(5000, 120000);
 
-  const displayedCars = cars.filter((car) => {
+  const displayedCars = inventory.filter((car) => {
     return car.make.toLowerCase().includes(searchTerm.toLowerCase());
   });
 

@@ -62,9 +62,16 @@ function Profile({
                   alt="something"
                   className="w-full h-full object-cover rounded absolute shadow"
                 />
-                <div className="absolute bg-black opacity-0 top-0 right-0 bottom-0 left-0 rounded" />
                 <div className="flex items-center px-3 py-2 rounded absolute right-0 mr-4 mt-4 cursor-pointer">
                   <div className="ml-2 text-gray-100"></div>
+                </div>
+                <div className="cursor-pointer w-20 h-20 rounded-full absolute bottom-0 -mb-10 ml-12 flex items-center justify-center">
+                  <img
+                    src="https://freesvg.org/img/abstract-user-flat-4.png"
+                    alt="something"
+                    className="absolute z-0 h-full w-full object-cover rounded-full top-0 left-0 bottom-0 right-0"
+                  />
+                  <div className="absolute bg-black opacity-0 top-0 right-0 bottom-0 left-0 rounded-full z-0" />
                 </div>
               </div>
             </div>

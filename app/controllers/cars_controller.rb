@@ -3,8 +3,8 @@ class CarsController < ApplicationController
     render json: Car.all
   end
 
-  def saved
-    cars = Car.all.limit(5)
+  def inventory
+    cars = Car.all.limit(8)
     render json: cars
   end
 

@@ -239,7 +239,7 @@ const NewVehicle = ({ onAddCar }) => {
           />
         </div>
 
-        {/* <div id="fileUpload">
+        <div id="fileUpload">
           <div className="mb-2 block">
             <Label htmlFor="file" value="Listing Image" />
           </div>
@@ -247,7 +247,7 @@ const NewVehicle = ({ onAddCar }) => {
             id="file"
             helperText="Upload the primary listing image for this vehicle."
           />
-        </div> */}
+        </div>
 
         <div>
           <div className="flex items-center gap-2">
