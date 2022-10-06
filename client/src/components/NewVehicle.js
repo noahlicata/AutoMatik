@@ -14,6 +14,10 @@ const NewVehicle = ({ onAddCar }) => {
   const [year, setYear] = useState("");
   const [milage, setMilage] = useState("");
   const [image, setImage] = useState("");
+  const [image2, setImage2] = useState("");
+  const [image3, setImage3] = useState("");
+  const [image4, setImage4] = useState("");
+  const [image5, setImage5] = useState("");
   const [standardSpecs, setStandardSpecs] = useState([]);
   const [carOptions, setCarOptions] = useState([]);
   const [price, setPrice] = useState("");
@@ -33,6 +37,10 @@ const NewVehicle = ({ onAddCar }) => {
       year: year,
       milage: milage,
       image: image,
+      image2: image2,
+      image3: image3,
+      image4: image4,
+      image5: image5,
       standard_specs: standardSpecs,
       car_options: carOptions,
       price: price,
@@ -239,7 +247,55 @@ const NewVehicle = ({ onAddCar }) => {
           />
         </div>
 
-        <div id="fileUpload">
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="image2" value="Image2" />
+          </div>
+          <TextInput
+            value={image2}
+            onChange={(e) => setImage2(e.target.value)}
+            id="image2"
+            placeholder="Image2"
+          />
+        </div>
+
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="image3" value="Image3" />
+          </div>
+          <TextInput
+            value={image3}
+            onChange={(e) => setImage3(e.target.value)}
+            id="image3"
+            placeholder="Image3"
+          />
+        </div>
+
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="image4" value="Image4" />
+          </div>
+          <TextInput
+            value={image4}
+            onChange={(e) => setImage4(e.target.value)}
+            id="image4"
+            placeholder="Image4"
+          />
+        </div>
+
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="image5" value="Image5" />
+          </div>
+          <TextInput
+            value={image5}
+            onChange={(e) => setImage5(e.target.value)}
+            id="image5"
+            placeholder="Image5"
+          />
+        </div>
+
+        {/* <div id="fileUpload">
           <div className="mb-2 block">
             <Label htmlFor="file" value="Listing Image" />
           </div>
@@ -247,7 +303,7 @@ const NewVehicle = ({ onAddCar }) => {
             id="file"
             helperText="Upload the primary listing image for this vehicle."
           />
-        </div>
+        </div> */}
 
         <div>
           <div className="flex items-center gap-2">
