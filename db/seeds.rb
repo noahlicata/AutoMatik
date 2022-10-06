@@ -31,6 +31,10 @@ Dealer.create(
 
 Car.create(
     image: "https://images.autotrader.com/hn/c/123673c63f934da2944d86ffafaa5871.jpg",
+    image2: "https://images.autotrader.com/hn/c/ccf044194b9f40d8a418a9bced9615c7.jpg",
+    image3: "https://images.autotrader.com/hn/c/96a5ad4e7a644eb9aa906340fe316028.jpg",
+    image4: "https://images.autotrader.com/hn/c/c8ce900a73784330be102f72d1c4e2fb.jpg",
+    image5: "https://images.autotrader.com/hn/c/ffbe3513f95841f69adf69b83ea4912b.jpg",
     vin: 'WAUB4AF48PA009110',
     make: 'Audi',
     model: 'S4',

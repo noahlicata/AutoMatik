@@ -233,13 +233,20 @@ const Details = () => {
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.
                   </p>
+                  <br></br>
+                  <p className="text-sm text-gray-700">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div className="col-span-2 mt-6 md:mt-0">
-          <div className="flex items-start mb-5">
+          <div className="flex items-start">
             <div className="pr-4">
               <footer>
                 <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
@@ -252,7 +259,7 @@ const Details = () => {
               <h4 className="text-xl font-bold text-gray-900 dark:text-white">
                 Seller Comments:
               </h4>
-              <p className="pb-4">
+              <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -276,35 +283,19 @@ const Details = () => {
               </button> */}
             </div>
           </div>
-          <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
+          <div className="mx-auto h-1/2 w-1/2">
             <Carousel>
-              <img
-                src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                alt="..."
-              />
-              <img
-                src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                alt="..."
-              />
-              <img
-                src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                alt="..."
-              />
-              <img
-                src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                alt="..."
-              />
-              <img
-                src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                alt="..."
-              />
+              <img src={carDetails.image2} alt="..." />
+              <img src={carDetails.image3} alt="..." />
+              <img src={carDetails.image4} alt="..." />
+              <img src={carDetails.image5} alt="..." />
             </Carousel>
           </div>
 
           {/* split */}
 
           <form
-            className="mt-5 border-8 border-blue-700 rounded-xl bg-blue-700 shadow-md"
+            className="border-8 border-blue-700 rounded-xl bg-blue-700 shadow-md"
             onSubmit={calculateValues}
           >
             <h1 className="block mb-2 text-xl font-medium text-white">
