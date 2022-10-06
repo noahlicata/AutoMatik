@@ -112,33 +112,23 @@ const DashDetails = () => {
               <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
                 <Carousel slide={false}>
                   <img
-                    src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
-                      Math.random() * 101
-                    )}`}
+                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
                     alt="..."
                   />
                   <img
-                    src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
-                      Math.random() * 101
-                    )}`}
+                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
                     alt="..."
                   />
                   <img
-                    src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
-                      Math.random() * 101
-                    )}`}
+                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
                     alt="..."
                   />
                   <img
-                    src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
-                      Math.random() * 101
-                    )}`}
+                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
                     alt="..."
                   />
                   <img
-                    src={`https://loremflickr.com/600/300/automobile/all?random=${Math.floor(
-                      Math.random() * 101
-                    )}`}
+                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
                     alt="..."
                   />
                 </Carousel>

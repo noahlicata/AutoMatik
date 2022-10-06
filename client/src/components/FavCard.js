@@ -14,7 +14,7 @@ const FavCard = ({ favCar, onRemoveFavCar }) => {
   return (
     <div className="p-4 flex justify-between items-center mb-8 mt-4 border border-gray-300 rounded-lg">
       <div className="w-9/12">
-        <p className="text-sm text-gray-800 dark:text-gray-100 pb-1">
+        <p className="text-sm font-bold text-gray-800 dark:text-gray-100 pb-1">
           {year} {make} {model} {version}{" "}
           <button
             onClick={clickedRemove}
@@ -25,7 +25,7 @@ const FavCard = ({ favCar, onRemoveFavCar }) => {
           </button>
         </p>
         <img
-          className="w-20 h-20 border-2 border-gray-900 rounded-lg"
+          className="w-1/6 h-1/6 border-2 border-gray-900 rounded-lg"
           src={image}
           alt="oops"
         />
