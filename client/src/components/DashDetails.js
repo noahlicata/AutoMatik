@@ -111,26 +111,11 @@ const DashDetails = () => {
               <dt class="text-sm font-medium text-gray-500">Images</dt>
               <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
                 <Carousel slide={false}>
-                  <img
-                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                    alt="..."
-                  />
-                  <img
-                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                    alt="..."
-                  />
-                  <img
-                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                    alt="..."
-                  />
-                  <img
-                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                    alt="..."
-                  />
-                  <img
-                    src="https://supercarrides.com.au/wp-content/uploads/2021/05/ComingSoon.jpg"
-                    alt="..."
-                  />
+                  <img src={carDetails.image} alt="..." />
+                  <img src={carDetails.image2} alt="..." />
+                  <img src={carDetails.image3} alt="..." />
+                  <img src={carDetails.image4} alt="..." />
+                  <img src={carDetails.image5} alt="..." />
                 </Carousel>
               </div>
             </div>

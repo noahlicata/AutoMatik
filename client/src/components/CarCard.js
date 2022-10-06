@@ -43,14 +43,6 @@ function CarCard({ car, onFavoriteCar }) {
             >
               {car.year} {car.make} {car.model} {car.version}{" "}
             </Link>
-
-            <button
-              class=" bg-red-500 text-white active:bg-red-600 font-bold uppercase text-sm px-4 rounded-xl shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-              type="button"
-              onClick={clickedFavorites}
-            >
-              ♥️
-            </button>
           </div>
           <div>
             <p className="text-green-500 text-base mb-2 font-bold tracking-tight dark:text-white">
@@ -152,7 +144,7 @@ function CarCard({ car, onFavoriteCar }) {
             {car.year >= 2021 && car.milage <= 1000 ? (
               <span>
                 <Tooltip
-                  content="Car is brand new, any existing miles are from test drives."
+                  content="Car is brand new, any existing miles are from delivery or test drives."
                   style="dark"
                 >
                   <button className="font-normal hover:underline text-xs text-green-700 dark:text-green-400">
@@ -172,6 +164,17 @@ function CarCard({ car, onFavoriteCar }) {
                 </Tooltip>
               </span>
             )}
+            <Tooltip
+              content="Click to save this vehicle to your collection. Cars you've saved can be found in your profile under 'Your Collection'."
+              style="dark"
+            >
+              <div
+                className="font-normal hover:underline text-xs text-blue-700 dark:text-blue-400 cursor-pointer"
+                onClick={clickedFavorites}
+              >
+                Save this car!
+              </div>
+            </Tooltip>
           </div>
         </div>
       </div>

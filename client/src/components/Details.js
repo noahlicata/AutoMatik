@@ -233,13 +233,6 @@ const Details = () => {
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.
                   </p>
-                  <br></br>
-                  <p className="text-sm text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
                 </div>
               </div>
             </div>
@@ -283,7 +276,7 @@ const Details = () => {
               </button> */}
             </div>
           </div>
-          <div className="mx-auto h-1/2 w-1/2">
+          <div className="mx-auto h-1/3 w-1/2 mt-4">
             <Carousel>
               <img src={carDetails.image2} alt="..." />
               <img src={carDetails.image3} alt="..." />
@@ -293,85 +286,86 @@ const Details = () => {
           </div>
 
           {/* split */}
-
-          <form
-            className="border-8 border-blue-700 rounded-xl bg-blue-700 shadow-md"
-            onSubmit={calculateValues}
-          >
-            <h1 className="block mb-2 text-xl font-medium text-white">
-              FINANCING
-            </h1>
-            <div className="grid gap-6 mb-6 md:grid-cols-2">
-              <div>
-                <div className="text-white">MSRP</div>
-                <div className="text-white">Dealer Discount</div>
-                <div className="text-white mt-4 text-xl font-bold">
-                  Listing Price
-                </div>
-              </div>
-              <div>
-                <div className="text-white">${carDetails.price}</div>
-                <div className="text-white">- ${dealerDiscount}</div>
-                <div className="text-white mt-4 text-xl font-bold">
-                  ${(carDetails.price -= dealerDiscount)}
-                </div>
-              </div>
-
-              <div>
-                <label className="block mb-2 text-sm font-medium text-white">
-                  Est. Trade-In Value
-                </label>
-                <input
-                  value={tradeValue}
-                  onSubmit={(e) => setTradeValue(e.target.value)}
-                  type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Amount"
-                  required=""
-                />
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium text-white">
-                  Amount Owed on Trade
-                </label>
-                <input
-                  value={owedValue}
-                  onSubmit={(e) => setOwedValue(e.target.value)}
-                  type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Amount"
-                  required=""
-                />
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium text-white">
-                  Down Payment
-                </label>
-                <input
-                  value={downValue}
-                  onSubmit={(e) => setDownValue(e.target.value)}
-                  type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Amount"
-                  required=""
-                />
-              </div>
-              <div>
-                <label className="block mb-2 text-xl font-bold text-center text-white">
-                  Average Monthly Payment
-                </label>
-                <div className="text-white mt-4 text-xl font-bold text-center">
-                  WORK PLEASE
-                </div>
-              </div>
-            </div>
-            <button
-              type="submit"
-              className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+          <div className="mt-4">
+            <form
+              className="border-8 border-blue-700 rounded-xl bg-blue-700 shadow-md"
+              onSubmit={calculateValues}
             >
-              Calculate
-            </button>
-          </form>
+              <h1 className="block mb-2 text-xl font-medium text-white">
+                FINANCING
+              </h1>
+              <div className="grid gap-6 mb-6 md:grid-cols-2">
+                <div>
+                  <div className="text-white">MSRP</div>
+                  <div className="text-white">Dealer Discount</div>
+                  <div className="text-white mt-4 text-xl font-bold">
+                    Listing Price
+                  </div>
+                </div>
+                <div>
+                  <div className="text-white">${carDetails.price}</div>
+                  <div className="text-white">- ${dealerDiscount}</div>
+                  <div className="text-white mt-4 text-xl font-bold">
+                    ${(carDetails.price -= dealerDiscount)}
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-white">
+                    Est. Trade-In Value
+                  </label>
+                  <input
+                    value={tradeValue}
+                    onSubmit={(e) => setTradeValue(e.target.value)}
+                    type="text"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Amount"
+                    required=""
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-white">
+                    Amount Owed on Trade
+                  </label>
+                  <input
+                    value={owedValue}
+                    onSubmit={(e) => setOwedValue(e.target.value)}
+                    type="text"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Amount"
+                    required=""
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-white">
+                    Down Payment
+                  </label>
+                  <input
+                    value={downValue}
+                    onSubmit={(e) => setDownValue(e.target.value)}
+                    type="text"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="Amount"
+                    required=""
+                  />
+                </div>
+                <div>
+                  <label className="block mb-2 text-xl font-bold text-center text-white">
+                    Average Monthly Payment
+                  </label>
+                  <div className="text-white mt-4 text-xl font-bold text-center">
+                    WORK PLEASE
+                  </div>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+              >
+                Calculate
+              </button>
+            </form>
+          </div>
         </div>
       </article>
     </div>
