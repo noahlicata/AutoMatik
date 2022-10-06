@@ -168,9 +168,6 @@ function Shop({
                   <div className="flex items-center mb-4">
                     <input
                       name="year"
-                      onClick={(e) =>
-                        onSortAsc(e, "year", yearOrder, setYearOrder)
-                      }
                       id="default-checkbox"
                       type="checkbox"
                       value=""

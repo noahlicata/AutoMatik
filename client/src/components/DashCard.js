@@ -16,7 +16,7 @@ const DashCard = ({ car, price }) => {
       </Table.Cell>
       <Table.Cell>{car.color}</Table.Cell>
       <Table.Cell>{car.milage.toLocaleString()}</Table.Cell>
-      <Table.Cell>${getRandomInt(5000, 72000).toLocaleString()}</Table.Cell>
+      <Table.Cell>${car.price.toLocaleString()}</Table.Cell>
       <Table.Cell>
         <Link
           to={`/dashboard/${car.id}`}
