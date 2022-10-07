@@ -85,7 +85,9 @@ function NavBar({
         )}
         <Navbar.Collapse>
           <Navbar.Link href="/">Home</Navbar.Link>
-          <Navbar.Link href="http://localhost:4000/cars">Shop</Navbar.Link>
+          <Navbar.Link href="https://automatikapp.herokuapp.com/cars">
+            Shop
+          </Navbar.Link>
           <Navbar.Link href="/dealer">Dealer</Navbar.Link>
           <Navbar.Link href="/contact">Contact</Navbar.Link>
         </Navbar.Collapse>
