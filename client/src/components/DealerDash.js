@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Spinner, Table } from "flowbite-react";
 import DashCard from "./DashCard";
 
-const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
+const DealerDash = ({ isLoading, inventory }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   function getRandomInt(min, max) {
@@ -10,6 +10,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
   }
+  // eslint-disable-next-line no-unused-vars
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   let price = getRandomInt(5000, 120000);
 
@@ -20,10 +21,6 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
   const carsObj = displayedCars.map((car) => {
     return <DashCard key={car.id} car={car} price={price} />;
   });
-
-  // const newVehicleForm = () => {
-  //   history.push("/newvehicle");
-  // };
 
   return (
     <div>
@@ -313,7 +310,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                         Latest Customers
                       </h3>
                       <a
-                        href="#"
+                        href="/dashboard"
                         class="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg inline-flex items-center p-2"
                       >
                         View all
@@ -329,7 +326,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
                                   Math.random() * 101
                                 )}`}
-                                alt="Neil image"
+                                alt="..."
                               />
                             </div>
                             <div class="flex-1 min-w-0">
@@ -337,13 +334,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 Neil Sims
                               </p>
                               <p class="text-sm text-gray-500 truncate">
-                                <a
-                                  href="/cdn-cgi/l/email-protection"
-                                  class="__cf_email__"
-                                  data-cfemail="17727a767e7b57607e7973646372653974787a"
-                                >
-                                  neils3@gmail.com
-                                </a>
+                                <a href="/dashboard">neils3@gmail.com</a>
                               </p>
                             </div>
                             <div class="inline-flex items-center text-base font-semibold text-gray-900">
@@ -360,7 +351,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
                                   Math.random() * 101
                                 )}`}
-                                alt="Neil image"
+                                alt="..."
                               />
                             </div>
                             <div class="flex-1 min-w-0">
@@ -368,11 +359,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 Bonnie Green
                               </p>
                               <p class="text-sm text-gray-500 truncate">
-                                <a
-                                  href="/cdn-cgi/l/email-protection"
-                                  class="__cf_email__"
-                                  data-cfemail="d4b1b9b5bdb894a3bdbab0a7a0b1a6fab7bbb9"
-                                >
+                                <a href="/dashboard">
                                   green.bonnie23@gmail.com
                                 </a>
                               </p>
@@ -391,7 +378,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
                                   Math.random() * 101
                                 )}`}
-                                alt="Neil image"
+                                alt="..."
                               />
                             </div>
                             <div class="flex-1 min-w-0">
@@ -399,13 +386,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 Michael Gough
                               </p>
                               <p class="text-sm text-gray-500 truncate">
-                                <a
-                                  href="/cdn-cgi/l/email-protection"
-                                  class="__cf_email__"
-                                  data-cfemail="57323a363e3b17203e3933242332257934383a"
-                                >
-                                  goughgetem@gmail.com
-                                </a>
+                                <a href="/browse">goughgetem@gmail.com</a>
                               </p>
                             </div>
                             <div class="inline-flex items-center text-base font-semibold text-gray-900">
@@ -422,7 +403,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
                                   Math.random() * 101
                                 )}`}
-                                alt="Neil image"
+                                alt="..."
                               />
                             </div>
                             <div class="flex-1 min-w-0">
@@ -430,13 +411,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 Thomes Lean
                               </p>
                               <p class="text-sm text-gray-500 truncate">
-                                <a
-                                  href="/cdn-cgi/l/email-protection"
-                                  class="__cf_email__"
-                                  data-cfemail="284d45494144685f41464c5b5c4d5a064b4745"
-                                >
-                                  thomas.l@yahoo.com
-                                </a>
+                                <a href="/dashboard">thomas.l@yahoo.com</a>
                               </p>
                             </div>
                             <div class="inline-flex items-center text-base font-semibold text-gray-900">
@@ -453,7 +428,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 src={`https://loremflickr.com/480/480/face/all?random=${Math.floor(
                                   Math.random() * 101
                                 )}`}
-                                alt="Neil image"
+                                alt="..."
                               />
                             </div>
                             <div class="flex-1 min-w-0">
@@ -461,13 +436,7 @@ const DealerDash = ({ isLoading, setIsLoading, inventory }) => {
                                 Lana Byrd
                               </p>
                               <p class="text-sm text-gray-500 truncate">
-                                <a
-                                  href="/cdn-cgi/l/email-protection"
-                                  class="__cf_email__"
-                                  data-cfemail="a2c7cfc3cbcee2d5cbccc6d1d6c7d08cc1cdcf"
-                                >
-                                  dryblana@gmail.com
-                                </a>
+                                <a href="/dashbaord">dryblana@gmail.com</a>
                               </p>
                             </div>
                             <div class="inline-flex items-center text-base font-semibold text-gray-900">

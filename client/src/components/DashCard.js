@@ -3,11 +3,7 @@ import { Table } from "flowbite-react";
 import { Link } from "react-router-dom";
 
 const DashCard = ({ car, price }) => {
-  function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
-  }
+  // eslint-disable-next-line no-unused-vars
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return (
     <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">

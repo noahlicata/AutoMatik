@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Tooltip, Button } from "flowbite-react";
+import { Tooltip } from "flowbite-react";
 
 function CarCard({ car, onFavoriteCar }) {
   function getRandomInt(min, max) {
@@ -9,16 +9,16 @@ function CarCard({ car, onFavoriteCar }) {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
+  // eslint-disable-next-line no-unused-vars
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
-  let m = getRandomInt(1500, 0);
-  let p = getRandomInt(1, 2);
-
+  // eslint-disable-next-line no-unused-vars
   const [randomState, setRandomState] = useState(Math.floor(Math.random() * 2));
 
-  function clickedFavorites() {
+  let m = getRandomInt(1500, 0);
+
+  const clickedFavorites = () => {
     onFavoriteCar(car.id);
-  }
+  };
 
   return (
     <div className="mb-4">
@@ -145,6 +145,7 @@ function CarCard({ car, onFavoriteCar }) {
               <span>
                 <Tooltip
                   content="Car is brand new, any existing miles are from delivery or test drives."
+                  // eslint-disable-next-line react/style-prop-object
                   style="dark"
                 >
                   <button className="font-normal hover:underline text-xs text-green-700 dark:text-green-400">
@@ -156,6 +157,7 @@ function CarCard({ car, onFavoriteCar }) {
               <span>
                 <Tooltip
                   content="Car has been previously owned by one or many people. See seller comments for more information on car history."
+                  // eslint-disable-next-line react/style-prop-object
                   style="dark"
                 >
                   <button className="font-normal hover:underline text-xs text-orange-700 dark:text-orange-400">
@@ -166,6 +168,7 @@ function CarCard({ car, onFavoriteCar }) {
             )}
             <Tooltip
               content="Click to save this vehicle to your collection. Cars you've saved can be found in your profile under 'Your Collection'."
+              // eslint-disable-next-line react/style-prop-object
               style="dark"
             >
               <div

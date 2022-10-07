@@ -1,8 +1,6 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 
 const Contact = ({ loggedIn, currentUser }) => {
-  const history = useHistory();
   const handleSubmit = () => {
     alert("test");
   };
@@ -26,7 +24,7 @@ const Contact = ({ loggedIn, currentUser }) => {
           <form className="space-y-8" onSubmit={handleSubmit}>
             <div>
               <label
-                for="email"
+                htmlFor="email"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Your email
@@ -41,7 +39,7 @@ const Contact = ({ loggedIn, currentUser }) => {
             </div>
             <div>
               <label
-                for="subject"
+                htmlFor="subject"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Subject
@@ -56,7 +54,7 @@ const Contact = ({ loggedIn, currentUser }) => {
             </div>
             <div className="sm:col-span-2">
               <label
-                for="message"
+                htmlFor="message"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
               >
                 Your message

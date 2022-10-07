@@ -81,11 +81,7 @@ function App() {
     setCars([newCar, ...cars]);
   }
 
-  console.log(profPhoto);
-
   function handleFavorites(id) {
-    console.log(id);
-    // const favCarIndex = favCars.findIndex((car) => car.id === clickedCar.id);
     fetch("/user_cars", {
       method: "POST",
       headers: {

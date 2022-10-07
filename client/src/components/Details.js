@@ -11,12 +11,12 @@ const Details = () => {
   const [tradeValue, setTradeValue] = useState("");
   const [owedValue, setOwedValue] = useState("");
   const [downValue, setDownValue] = useState("");
-  const [total, setTotal] = useState("");
+  // const [total, setTotal] = useState("");
 
   let dealerDiscount = Math.floor(Math.random() * 1000);
 
   const calculateValues = () => {
-    setTotal();
+    // setTotal();
   };
 
   const { id } = useParams();
@@ -27,10 +27,6 @@ const Details = () => {
     return Math.floor(Math.random() * (max - min) + min);
   }
 
-  // function clickedFavorites() {
-  //   onFavoriteCar(car);
-  // }
-
   useEffect(() => {
     fetch(`/cars/${id}`)
       .then((res) => res.json())
@@ -38,6 +34,7 @@ const Details = () => {
         setCarDetails(data);
         setRandomState(Math.floor(Math.random() * 2));
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   let m = getRandomInt(1500, 0);
@@ -206,9 +203,6 @@ const Details = () => {
               </div>
             </div>
           </div>
-
-          {/* split */}
-
           <div className="mt-10 w-full max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
             <div className="px-5 pb-5">
               <div className="items-center">
@@ -261,19 +255,6 @@ const Details = () => {
                 nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
-              {/* <button
-                class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                type="button"
-                onClick={clickedFavorites}
-              >
-                <i class="fas fa-heart"></i>SAVE
-              </button>
-              <button
-                class="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                type="button"
-              >
-                <i class="fas fa-heart"></i>SHARE
-              </button> */}
             </div>
           </div>
           <div className="mx-auto h-1/3 w-1/2 mt-4">
@@ -284,8 +265,6 @@ const Details = () => {
               <img src={carDetails.image5} alt="..." />
             </Carousel>
           </div>
-
-          {/* split */}
           <div className="mt-4">
             <form
               className="border-8 border-blue-700 rounded-xl bg-blue-700 shadow-md"

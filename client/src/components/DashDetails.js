@@ -3,7 +3,9 @@ import { useParams } from "react-router-dom";
 import { Carousel } from "flowbite-react";
 
 const DashDetails = () => {
+  // eslint-disable-next-line no-unused-vars
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  // eslint-disable-next-line no-unused-vars
   const [randomState, setRandomState] = useState(1);
   const [carDetails, setCarDetails] = useState({
     car_options: [],
@@ -25,6 +27,7 @@ const DashDetails = () => {
         setCarDetails(data);
         setRandomState(Math.floor(Math.random() * 2));
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

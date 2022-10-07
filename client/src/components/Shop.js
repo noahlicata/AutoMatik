@@ -14,17 +14,16 @@ function Shop({
   const [searchTerm, setSearchTerm] = useState("");
   const [yearOrder, setYearOrder] = useState(true);
 
-  // nonsense
   function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
   }
 
+  // eslint-disable-next-line no-unused-vars
   const commas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   let price = getRandomInt(5000, 120000);
-  // nonsense
 
   const displayedCars = cars.filter((car) => {
     return car.make.toLowerCase().includes(searchTerm.toLowerCase());
@@ -131,9 +130,6 @@ function Shop({
               />
             </div>
           </form>
-
-          {/* sidebar */}
-
           <div className="flex justify-center">
             <aside className="w-64 mr-10" aria-label="Sidebar">
               <div className="overflow-y-auto py-4 px-3 bg-gray-50 rounded dark:bg-gray-800">
@@ -148,8 +144,6 @@ function Shop({
                   </span>
                 </a>
                 <ul className="space-y-2">
-                  {/* check boxes */}
-
                   <div className="flex items-center my-4">
                     <input
                       name="year"
@@ -273,15 +267,15 @@ function Shop({
                   </p>
                   {!loggedIn ? (
                     <li>
-                      <a className="mt-4 flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                      <p className="mt-4 flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
                         <span>
                           Welcome! Use the search bar and filters to narrow down
                           your selection. If you find something you like,
                           remember to save it to your favorites!
                         </span>
-                      </a>
+                      </p>
                       <br></br>
-                      <a className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                      <p className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
                         <span>
                           Have questions? Feel free to{" "}
                           <a
@@ -292,20 +286,20 @@ function Shop({
                           </a>{" "}
                           us!
                         </span>
-                      </a>
+                      </p>
                     </li>
                   ) : (
                     <li>
-                      <a className="mt-4 flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                      <p className="mt-4 flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
                         <span>
                           Welcome back {currentUser.email}! Use the search bar
                           and filters to narrow down your selection. If you find
                           something you like, remember to save it to your
                           favorites!
                         </span>
-                      </a>
+                      </p>
                       <br></br>
-                      <a className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
+                      <p className="flex items-center text-sm font-normal text-gray-900 rounded-lg dark:text-white ">
                         <span>
                           Have questions? Feel free to{" "}
                           <a
@@ -316,7 +310,7 @@ function Shop({
                           </a>{" "}
                           us!
                         </span>
-                      </a>
+                      </p>
                     </li>
                   )}
                   {loggedIn ? null : (

@@ -11,7 +11,7 @@ const Forgot = () => {
         <section>
           <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a
-              href="#"
+              href="/"
               class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
             >
               <img
@@ -82,7 +82,7 @@ const Forgot = () => {
                       I accept the{" "}
                       <a
                         class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                        href="#"
+                        href="/"
                       >
                         Terms and Conditions
                       </a>
@@ -103,7 +103,7 @@ const Forgot = () => {
         <section>
           <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a
-              href="#"
+              href="/"
               class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
             >
               <img
@@ -191,7 +191,7 @@ const Forgot = () => {
                       I accept the{" "}
                       <a
                         class="font-medium text-primary-600 hover:underline dark:text-primary-500"
-                        href="#"
+                        href="/"
                       >
                         Terms and Conditions
                       </a>

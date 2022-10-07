@@ -27,11 +27,8 @@ const FavCard = ({ favCar, onRemoveFavCar }) => {
         <img
           className="w-1/6 h-1/6 border-2 border-gray-900 rounded-lg"
           src={image}
-          alt="oops"
+          alt="..."
         />
-        {/* <p className="text-sm text-gray-500 dark:text-gray-400">
-          {color} | {milage} miles
-        </p> */}
       </div>
     </div>
   );
