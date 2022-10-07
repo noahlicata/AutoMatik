@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Label, TextInput, FileInput, Button, Checkbox } from "flowbite-react";
+import { Label, TextInput, Button, Checkbox } from "flowbite-react";
 
 const NewVehicle = ({ onAddCar }) => {
   const [vin, setVin] = useState("");
@@ -294,17 +294,6 @@ const NewVehicle = ({ onAddCar }) => {
             placeholder="Image5"
           />
         </div>
-
-        {/* <div id="fileUpload">
-          <div className="mb-2 block">
-            <Label htmlFor="file" value="Listing Image" />
-          </div>
-          <FileInput
-            id="file"
-            helperText="Upload the primary listing image for this vehicle."
-          />
-        </div> */}
-
         <div>
           <div className="flex items-center gap-2">
             <Checkbox id="remember" />
